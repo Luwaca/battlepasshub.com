@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public'
+app.use(express.static(path.join(__dirname))); // Serve static files from root
 
 // Function to get access token from Blizzard
 async function getAccessToken() {

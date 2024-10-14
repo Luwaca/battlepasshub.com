@@ -8,7 +8,7 @@
 </head>
 <body class="player-stats">
     <div class="banner">
-        <a href="index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href="overwatch.html">Overwatch</a>
         <a href="fortnite.html">Fortnite</a>
         <a href="player-stats.html">Player Stats</a>
@@ -41,6 +41,7 @@
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
+                console.log(data); // Log the fetched data
 
                 // Display Overwatch Stats
                 const statsContent = document.getElementById('stats-content');
