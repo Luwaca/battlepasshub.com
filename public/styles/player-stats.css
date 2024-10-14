@@ -1,6 +1,6 @@
 body.player-stats {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #0f0f0f;  /* Matching the background color */
+    color: #FFFFFF;
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
@@ -65,13 +65,13 @@ body.player-stats {
 }
 
 .hero-banner.player-stats {
-    height: 40vh;
+    height: 60vh;  /* Matching banner height */
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url('banners/player-stats-banner.jpg') no-repeat center center;
+    background: url('../../banners/player-stats-banner.jpg') no-repeat center center;
     background-size: cover;
     color: #ffffff;
     text-shadow: 2px 2px 4px #000;
@@ -81,12 +81,12 @@ body.player-stats {
 }
 
 .hero-banner.player-stats h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 2.5em;  /* Matching font size */
+    margin-bottom: 10px;
 }
 
 .hero-banner.player-stats p {
-    font-size: 1.2em;
+    font-size: 1.2em;  /* Matching font size */
 }
 
 .content {
@@ -99,7 +99,7 @@ body.player-stats {
 
 .stats-box {
     background-color: #1e1e1e;
-    padding: 40px; /* Increased padding for prominence */
+    padding: 40px;  /* Increased padding for prominence */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 90%;

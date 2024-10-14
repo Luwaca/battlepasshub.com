@@ -13,13 +13,12 @@
         <a href="fortnite.html">Fortnite</a>
         <a href="player-stats.html">Player Stats</a>
     </div>
+    <div class="hero-banner player-stats">
+        
+    </div>
     <div class="search-bar">
         <input type="text" id="search-input" placeholder="Enter your username...">
         <button onclick="searchStats()">Search</button>
-    </div>
-    <div class="hero-banner player-stats">
-        <h1>Player Stats</h1>
-        <p>View and analyze player statistics for Overwatch and Fortnite</p>
     </div>
     <div class="content">
         <section class="stats-box">
@@ -42,7 +41,7 @@
                 }
                 const data = await response.json();
                 console.log('Fetched data:', data); // Log the fetched data
-    
+
                 // Display Overwatch Stats
                 const statsContent = document.getElementById('stats-content');
                 if (data && data.name) {
@@ -53,7 +52,7 @@
                         <p><strong>Rating:</strong> ${data.rating || 'N/A'}</p>
                         <p><strong>Prestige:</strong> ${data.prestige}</p>
                         <p><strong>Time Played:</strong> ${data.timePlayed}</p>
-                        <p><strong>Top Heroes:</strong> ${data.topHeroes.join(', ')}</p>
+                        <p><strong>Top Heroes:</strong> ${data.topHeroes ? data.topHeroes.join(', ') : 'N/A'}</p>
                     `;
                 } else {
                     statsContent.innerText = 'Private Account';
