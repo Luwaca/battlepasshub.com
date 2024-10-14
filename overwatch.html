@@ -23,8 +23,7 @@
     <div class="patch-notes-box">
         <h1>Latest Overwatch Patch Notes</h1>
         <p>Check out the latest updates and improvements made to Overwatch. Stay informed with the patch notes below:</p>
-        <a href="https://overwatch.blizzard.com/en-us/news/patch-notes/" target="_blank" class="patch-notes-link">View Overwatch Patch Notes</a>
-    </div>
+        <a href="https://overwatch.blizzard.com/en-us/news/patch-notes/" target="_blank" class="patch-notes-link">View Overwatch Patch Notes
 
     <div class="heroes-container">
         <!-- Repeat this block for each of the 41 heroes -->
@@ -110,57 +109,57 @@
             <img src="heroes/reaper.png" alt="Hero 27">
         </div>
         <div class="hero-box">
-            <img src="heroes/rein.png" alt="Hero 27">
+            <img src="heroes/rein.png" alt="Hero 28">
         </div>
         <div class="hero-box">
-            <img src="heroes/sigma.png" alt="Hero 28">
+            <img src="heroes/sigma.png" alt="Hero 29">
         </div>
         <div class="hero-box">
-            <img src="heroes/soj.png" alt="Hero 29">
+            <img src="heroes/soj.png" alt="Hero 30">
         </div>
         <div class="hero-box">
-            <img src="heroes/soldier.png" alt="Hero 30">
+            <img src="heroes/soldier.png" alt="Hero 31">
         </div>
         <div class="hero-box">
-            <img src="heroes/sombra.png" alt="Hero 31">
+            <img src="heroes/sombra.png" alt="Hero 32">
         </div>
         <div class="hero-box">
-            <img src="heroes/sym.png" alt="Hero 32">
+            <img src="heroes/sym.png" alt="Hero 33">
         </div>
         <div class="hero-box">
-            <img src="heroes/torb.png" alt="Hero 33">
+            <img src="heroes/torb.png" alt="Hero 34">
         </div>
         <div class="hero-box">
-            <img src="heroes/tracer.png" alt="Hero 34">
+            <img src="heroes/tracer.png" alt="Hero 35">
         </div>
         <div class="hero-box">
-            <img src="heroes/venture.png" alt="Hero 35">
+            <img src="heroes/venture.png" alt="Hero 36">
         </div>
         <div class="hero-box">
-            <img src="heroes/widowmaker.png" alt="Hero 36">
+            <img src="heroes/widowmaker.png" alt="Hero 37">
         </div>
         <div class="hero-box">
-            <img src="heroes/winston.png" alt="Hero 37">
+            <img src="heroes/winston.png" alt="Hero 38">
         </div>
         <div class="hero-box">
-            <img src="heroes/wrecking ball.png" alt="Hero 38">
+            <img src="heroes/wrecking ball.png" alt="Hero 39">
         </div>
         <div class="hero-box">
-            <img src="heroes/zarya.png" alt="Hero 39">
+            <img src="heroes/zarya.png" alt="Hero 40">
         </div>
         <div class="hero-box">
-            <img src="heroes/zen.png" alt="Hero 40">
+            <img src="heroes/zen.png" alt="Hero 41">
         </div>
         
         <!-- ...repeat for all 41 heroes... -->
     </div>
 
-    <script>
-        function countdown(endDate, elementId) {
+<script>
+        function countdown(endDate, elementId, timeZoneOffset) {
             const end = new Date(endDate).getTime();
             const x = setInterval(function() {
                 const now = new Date().getTime();
-                const distance = end - now;
+                const distance = end - now + (timeZoneOffset * 60 * 60 * 1000);
 
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -177,8 +176,9 @@
         }
 
         window.onload = function() {
-            countdown("Oct 15, 2024 00:00:00", "overwatch-countdown");
+            const timeZoneOffset = -4; // EDT (Eastern Daylight Time)
+            countdown("Oct 15, 2024 14:00:00", "overwatch-countdown", timeZoneOffset);
         };
     </script>
 </body>
-</html>
+
