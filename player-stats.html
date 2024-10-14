@@ -35,14 +35,14 @@
     <script>
         async function searchStats() {
             const username = document.getElementById('search-input').value;
-
+    
             try {
                 const response = await fetch(`/api/overwatch/stats/${username}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-
+    
                 // Display Overwatch Stats
                 const statsContent = document.getElementById('stats-content');
                 statsContent.innerHTML = `
@@ -58,5 +58,6 @@
             }
         }
     </script>
+    
 </body>
 </html>
