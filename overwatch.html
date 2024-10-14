@@ -13,7 +13,7 @@
         <a href="fortnite.html">Fortnite</a>
     </div>
     <div class="hero-banner overwatch">
-        
+       
     </div>
     <div class="content">
         <div class="countdown-box overwatch">
@@ -154,6 +154,7 @@
         <!-- Add other hero-boxes here -->
     </div>
   
+    
     <footer>
         &copy; 2024 Battle Pass Countdown. All rights reserved.
     </footer>
@@ -162,7 +163,7 @@
             const end = new Date(endDate).getTime();
             const x = setInterval(function() {
                 const now = new Date().getTime();
-                const distance = end - now;
+                const distance = end - now + (4 * 60 * 60 * 1000); // Adjusting for EDT (UTC-4)
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -175,10 +176,10 @@
             }, 1000);
         }
         window.onload = function() {
-            countdown("Dec 15, 2024 00:00:00", "overwatch-countdown");
+            countdown("Oct 15, 2024 00:00:00", "overwatch-countdown");
         };
     </script>
 </body>
-</html>
+
 
 
