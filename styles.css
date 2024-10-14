@@ -34,7 +34,7 @@ body {
 
 .hero-banner {
     height: 600px;
-    width: 100%; /* Ensure the banner scales to full width */
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,8 +42,8 @@ body {
     font-size: 2em;
     text-shadow: 2px 2px 4px #000;
     padding: 20px;
-    margin-top: 60px; /* Ensure it doesn't overlap with the banner */
-    background-size: cover; /* Ensure the image covers the entire banner area */
+    margin-top: 60px;
+    background-size: cover;
 }
 
 .hero-banner.home {
@@ -109,6 +109,32 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: inline-block;
     margin-top: 10px;
+}
+
+.patch-notes-box {
+    text-align: center;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.patch-notes-box h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff9800;
+}
+
+.patch-notes-link {
+    color: #ffeb3b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.patch-notes-link:hover {
+    text-decoration: underline;
 }
 
 footer {
