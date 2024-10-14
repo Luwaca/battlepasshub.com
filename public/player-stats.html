@@ -1,42 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Stats</title>
-    <link rel="stylesheet" href="styles/player-stats.css">
-</head>
-<body class="player-stats">
-    <div class="banner">
-        <a href="../index.html">Home</a>
-        <a href="overwatch.html">Overwatch</a>
-        <a href="fortnite.html">Fortnite</a>
-        <a href="player-stats.html">Player Stats</a>
-    </div>
-    <div class="hero-banner player-stats">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Player Stats</title>
+        <link rel="stylesheet" href="styles/player-stats.css">
+    </head>
+    
+    
+    
+    <body class="player-stats">
+        <div class="banner">
+            <a href="../index.html">Home</a>
+            <a href="overwatch.html">Overwatch</a>
+            <a href="fortnite.html">Fortnite</a>
+            <a href="player-stats.html">Player Stats</a>
+        </div>
+        <div class="hero-banner player-stats">
+           
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Enter your username..." list="recent-searches">
+            <datalist id="recent-searches"></datalist>
+            <button onclick="searchStats()">Search</button>
+        </div>
         
-    </div>
-    <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Enter your username...">
-        <button onclick="searchStats()">Search</button>
-    </div>
-    <div class="content">
-        <section class="stats-box">
-            <h2>Player Stats</h2>
-            <div id="stats-content">
-                <p>Enter a username to see stats...
-                 Username format "Username-xxxx"
-                 xxxx = Numbers after # in Battle.net ID 
-                </p>
-            </div>
-        </section>
-    </div>
-    <footer>
-        &copy; 2024 Battle Pass Countdown. All rights reserved.
-    </footer>
+        <div class="content">
+            <section class="stats-box">
+                <h2>Player Stats</h2>
+                <div id="stats-content">
+                    <p>Enter a username to see stats...</p>
+                </div>
+            </section>
+        </div>
+        <footer>
+            &copy; 2024 Battle Pass Countdown. All rights reserved.
+        </footer>
+    </body>
+    
+    
+    
+
     <script>
+        // Store recent searches in an array
+        let recentSearches = [];
+        
+        document.getElementById('search-input').addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                searchStats();
+            }
+        });
+    
+        // Add recent searches to the dropdown
+        function updateRecentSearchesDropdown() {
+            const dataList = document.getElementById('suggestions');
+            dataList.innerHTML = '';
+            recentSearches.forEach(player => {
+                const option = document.createElement('option');
+                option.value = player;
+                dataList.appendChild(option);
+            });
+        }
+    
         async function searchStats() {
-            const username = document.getElementById('search-input').value;
+            let username = document.getElementById('search-input').value;
+            username = username.replace('#', '-'); // Replace # with -
+    
+            // Add the username to the recent searches if it's not already there
+            if (!recentSearches.includes(username)) {
+                recentSearches.push(username);
+                updateRecentSearchesDropdown();
+            }
+    
             try {
                 const response = await fetch(`http://localhost:3000/api/overwatch/stats/${username}`);
                 if (!response.ok) {
@@ -44,18 +79,50 @@
                 }
                 const data = await response.json();
                 console.log('Fetched data:', data); // Log the fetched data
-
+    
                 // Display Overwatch Stats
                 const statsContent = document.getElementById('stats-content');
                 if (data && data.name) {
                     statsContent.innerHTML = `
-                        <p><strong>Username:</strong> ${data.name}</p>
-                        <p><strong>Level:</strong> ${data.level}</p>
-                        <p><strong>Games Won:</strong> ${data.gamesWon}</p>
-                        <p><strong>Rating:</strong> ${data.rating || 'N/A'}</p>
-                        <p><strong>Prestige:</strong> ${data.prestige}</p>
-                        <p><strong>Time Played:</strong> ${data.timePlayed}</p>
-                        <p><strong>Top Heroes:</strong> ${data.topHeroes ? data.topHeroes.join(', ') : 'N/A'}</p>
+                        <div class="player-info">
+                            <img src="${data.icon}" alt="${data.name}'s icon">
+                            <div>
+                                <p><strong>Username:</strong> ${data.name}</p>
+                                <p><strong>Endorsement Level:</strong> ${data.endorsement} <img src="${data.endorsementIcon}" alt="Endorsement Icon"></p>
+                            </div>
+                        </div>
+                        <div class="categories">
+                            <div class="section overall">
+                                <h3>Overall Stats</h3>
+                                <p><strong>Games Played:</strong> ${data.gamesPlayed}</p>
+                                <p><strong>Games Won:</strong> ${data.gamesWon}</p>
+                                <p><strong>Games Lost:</strong> ${data.gamesLost}</p>
+                            </div>
+                            <div class="section quickplay">
+                                <h3>Quickplay</h3>
+                                <p><strong>Games Played:</strong> ${data.quickPlayStats.games.played}</p>
+                                <p><strong>Games Won:</strong> ${data.quickPlayStats.games.won}</p>
+                            </div>
+                        </div>
+                        <div class="section competitive">
+                            <h3>Competitive</h3>
+                            <p><strong>Games Played:</strong> ${data.competitiveStats.games.played}</p>
+                            <p><strong>Games Won:</strong> ${data.competitiveStats.games.won}</p>
+                            <h4>Ratings</h4>
+                            ${['tank', 'offense', 'support'].map(role => {
+                                const rating = data.ratings.find(r => r.role.toLowerCase() === role) || { group: 'Unranked', tier: 'Unranked' };
+                                const roleName = role === 'offense' ? 'DPS' : role.toUpperCase();
+                                return `
+                                    <div class="role ${role}">
+                                        <h4>${roleName}</h4>
+                                        <div class="rating">
+                                            <p><strong>Rank:</strong> ${rating.group} ${rating.rankIcon ? `<img src="${rating.rankIcon}" alt="${rating.group} Rank Icon">` : ''}</p>
+                                            <p><strong>Tier:</strong> ${rating.tier} ${rating.divisionIcon ? `<img src="${rating.divisionIcon}" alt="Division Icon">` : ''}</p>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
                     `;
                 } else {
                     statsContent.innerText = 'Private Account';
@@ -66,5 +133,7 @@
             }
         }
     </script>
+    
+    
 </body>
 </html>

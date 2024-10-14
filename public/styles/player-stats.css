@@ -1,6 +1,7 @@
+/* Basic styles */
 body.player-stats {
-    background-color: #0f0f0f;  /* Matching the background color */
-    color: #FFFFFF;
+    background-color: #121212;
+    color: #e0e0e0;
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
@@ -32,13 +33,37 @@ body.player-stats {
     background-color: #575757;
 }
 
+/* Hero banner styling */
+.hero-banner.player-stats {
+    background: url('../../banners/player-stats-banner.jpg') no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.hero-banner.player-stats h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-banner.player-stats p {
+    font-size: 1.2em;
+}
+
 .search-bar {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin-top: 60px; /* Margin to ensure it's below the banner */
     background-color: #333;
+    margin-top: 5px; /* Adjust if needed to fit beneath the banner */
 }
 
 .search-bar input {
@@ -64,31 +89,56 @@ body.player-stats {
     background-color: #e68a00;
 }
 
-.hero-banner.player-stats {
-    height: 60vh;  /* Matching banner height */
-    width: 100%;
+/* Section container for categories */
+.categories {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: url('../../banners/player-stats-banner.jpg') no-repeat center center;
-    background-size: cover;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px #000;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 40px; /* Increased bottom margin for more space */
+    gap: 20px; /* Add spacing between categories */
+}
+
+/* Individual section styling */
+.section {
+    background-color: #2a2a2a;
     padding: 20px;
-    margin-top: 60px;
-    text-align: center;
+    border-radius: 10px;
+    text-align: left; /* Adjust alignment as needed */
 }
 
-.hero-banner.player-stats h1 {
-    font-size: 2.5em;  /* Matching font size */
-    margin-bottom: 10px;
+/* Overall and Quickplay sections */
+.section.overall,
+.section.quickplay {
+    width: calc(50% - 10px); /* Adjust width to be half of the container */
 }
 
-.hero-banner.player-stats p {
-    font-size: 1.2em;  /* Matching font size */
+/* Competitive section */
+.section.competitive {
+    width: 100%; /* Make it as wide as the combined width of the other two sections */
 }
 
+/* Competitive stats */
+.section.competitive h4 {
+    margin-top: 20px;
+    color: #FA9C1D;
+    font-size: 1.8em;
+    border-bottom: 2px solid #FA9C1D;
+    padding-bottom: 5px;
+}
+
+.role {
+    margin-top: 20px;
+}
+
+.role img {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+
+/* Content container */
 .content {
     display: flex;
     flex-direction: column;
@@ -97,27 +147,77 @@ body.player-stats {
     margin-top: 20px;
 }
 
+/* Stats box styling */
 .stats-box {
     background-color: #1e1e1e;
-    padding: 40px;  /* Increased padding for prominence */
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 90%;
+    max-width: 1200px;
+    width: 100%;
     text-align: center;
 }
 
 .stats-box h2 {
     color: #FA9C1D;
-    font-size: 2.5em; /* Larger font size */
+    font-size: 2.5em;
     margin-bottom: 20px;
 }
 
+/* Stats content */
 #stats-content {
     color: #e0e0e0;
-    font-size: 1.5em; /* Larger font size */
-    line-height: 1.5em; /* Increased line height for better readability */
+    font-size: 1.5em;
+    line-height: 1.5em;
 }
 
+/* Player info */
+.player-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.player-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.player-info p {
+    margin: 5px 10px;
+    font-size: 1.2em;
+}
+
+/* Section styling */
+.section {
+    margin: 20px 0;
+}
+
+.section h3 {
+    color: #FA9C1D;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.section p {
+    margin: 5px 0;
+}
+
+/* Competitive stats */
+.competitive-stats .rating {
+    margin: 10px 0;
+}
+
+.competitive-stats .rating img {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+/* Footer styling */
 footer {
     text-align: center;
     padding: 20px;
