@@ -1,1 +1,3 @@
 api-keys.env
+api-keys.env
+*.env

@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -7,6 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public'
 
 // Function to get access token from Blizzard
 async function getAccessToken() {
@@ -29,22 +31,28 @@ async function getAccessToken() {
     }
 }
 
+// Function to get Overwatch player stats using the community-driven API
+async function getOverwatchStats(username) {
+    try {
+        const response = await axios.get(`https://ow-api.com/v1/stats/pc/us/${username}/profile`);
+        console.log('API response:', response.data); // Log the response data
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching player stats:', error.response ? error.response.data : error.message);
+        throw error;
+    }
+}
+
 // Endpoint to fetch Overwatch player stats
 app.get('/api/overwatch/stats/:username', async (req, res) => {
     const username = req.params.username;
     console.log(`Fetching stats for username: ${username}`);
-    const accessToken = await getAccessToken();
-
     try {
-        const response = await axios.get(`https://ow-api.com/v1/stats/pc/us/${username}/profile`, {
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            }
-        });
+        const playerStats = await getOverwatchStats(username);
         console.log(`Stats fetched successfully for username: ${username}`);
-        res.json(response.data);
+        res.json(playerStats);
     } catch (error) {
-        console.error('Error fetching player stats:', error.response ? error.response.data : error.message);
+        console.error('Error fetching player stats:', error);
         res.status(500).send('Error fetching player stats');
     }
 });
