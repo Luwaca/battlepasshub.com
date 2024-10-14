@@ -65,7 +65,7 @@ body.player-stats {
 }
 
 .hero-banner.player-stats {
-    height: 60vh;
+    height: 40vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -99,20 +99,23 @@ body.player-stats {
 
 .stats-box {
     background-color: #1e1e1e;
-    padding: 20px;
+    padding: 40px; /* Increased padding for prominence */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 80%;
+    max-width: 90%;
     text-align: center;
 }
 
 .stats-box h2 {
     color: #FA9C1D;
+    font-size: 2.5em; /* Larger font size */
     margin-bottom: 20px;
 }
 
 #stats-content {
     color: #e0e0e0;
+    font-size: 1.5em; /* Larger font size */
+    line-height: 1.5em; /* Increased line height for better readability */
 }
 
 footer {

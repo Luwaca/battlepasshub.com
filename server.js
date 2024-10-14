@@ -2,11 +2,13 @@ const express = require('express');
 const axios = require('axios');
 const path = require('path');
 const dotenv = require('dotenv');
+const cors = require('cors');  // Import cors package
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(cors());  // Use cors middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from 'public'
 app.use(express.static(path.join(__dirname))); // Serve static files from root
