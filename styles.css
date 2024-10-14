@@ -137,6 +137,32 @@ body {
     text-decoration: underline;
 }
 
+.heroes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.hero-box {
+    width: 100px;
+    height: 150px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 footer {
     text-align: center;
     padding: 20px;
