@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<html data-theme="dark">
-
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,159 +7,232 @@
     <link rel="stylesheet" href="styles/overwatch.css">
 </head>
 <body class="overwatch">
-    <div class="banner">
-        <a href="../index.html">Home</a>
-        <a href="overwatch.html">Overwatch</a>
-        <a href="fortnite.html">Fortnite</a>
-        <a href="player-stats.html">Player Stats</a>
+    <div class="wrapper">
+        <div class="banner">
+            <a href="../index.html">Home</a>
+            <a href="overwatch.html">Overwatch</a>
+            <a href="fortnite.html">Fortnite</a>
+            <a href="player-stats.html">Player Stats</a>
+        </div>
+        <div class="hero-banner overwatch"></div>
+        <div class="content">
+            <div class="countdown-box overwatch">
+                <h1>Countdown to the Next Battle Pass</h1>
+                <div id="overwatch-countdown" class="countdown overwatch"></div>
+            </div>
+            <div class="patch-notes-box overwatch">
+                <h1>Latest Patch Notes</h1>
+                <p>Check out the latest updates and improvements made to Overwatch.</p>
+                <a href="https://overwatch.blizzard.com/en-us/news/patch-notes/" target="_blank" class="patch-notes-link">View Overwatch Patch Notes</a>
+            </div>
+        </div>
+        <div class="heroes-container">
+            <div class="group">
+                <h2>Tank</h2>
+                <div class="hero-boxes">
+                    <div class="hero-box" data-hero="doomfist">
+                        <img src="../heroes/doom.png" alt="Doomfist">
+                    </div>
+                    <div class="hero-box" data-hero="dva">
+                        <img src="../heroes/dva.png" alt="D.Va">
+                    </div>
+                    <div class="hero-box" data-hero="roadhog">
+                        <img src="../heroes/hog.png" alt="Roadhog">
+                    </div>
+                    <div class="hero-box" data-hero="reinhardt">
+                        <img src="../heroes/rein.png" alt="Reinhardt">
+                    </div>
+                    <div class="hero-box" data-hero="sigma">
+                        <img src="../heroes/sigma.png" alt="Sigma">
+                    </div>
+                    <div class="hero-box" data-hero="winston">
+                        <img src="../heroes/winston.png" alt="Winston">
+                    </div>
+                    <div class="hero-box" data-hero="wrecking-ball">
+                        <img src="../heroes/wrecking ball.png" alt="Wrecking Ball">
+                    </div>
+                    <div class="hero-box" data-hero="zarya">
+                        <img src="../heroes/zarya.png" alt="Zarya">
+                    </div>
+                    <div class="hero-box" data-hero="ramattra">
+                        <img src="../heroes/ram.png" alt="Ramattra">
+                    </div>
+                    <div class="hero-box" data-hero="junker-queen">
+                        <img src="../heroes/Junkerqueen.png" alt="Junker Queen">
+                    </div>
+                    <div class="hero-box" data-hero="mauga">
+                        <img src="../heroes/mauga.png" alt="Mauga">
+                    </div>
+                    <div class="hero-box" data-hero="orisa">
+                        <img src="../heroes/orisa.png" alt="Orisa">
+                    </div>
+                </div>
+            </div>
+                
+            <div class="group">
+                <h2>DPS</h2>
+                <div class="hero-boxes">
+                    <div class="hero-box" data-hero="ashe">
+                        <img src="../heroes/ashe.png" alt="Ashe">
+                    </div>
+                    <div class="hero-box" data-hero="cassidy">
+                        <img src="../heroes/cass.png" alt="Cassidy">
+                    </div>
+                    <div class="hero-box" data-hero="echo">
+                        <img src="../heroes/echo.png" alt="Echo">
+                    </div>
+                    <div class="hero-box" data-hero="bastion">
+                        <img src="../heroes/bastion.png" alt="Hero 4">
+                    </div>
+                    <div class="hero-box" data-hero="genji">
+                        <img src="../heroes/genji.png" alt="Hero 10">
+                    </div>
+                    <div class="hero-box" data-hero="hanzo">
+                        <img src="../heroes/Hanzo.png" alt="Hero 11">
+                    </div>
+                    <div class="hero-box" data-hero="sojourn">
+                        <img src="../heroes/soj.png" alt="Hero 30">
+                    </div>
+                    <div class="hero-box" data-hero="soldier">
+                        <img src="../heroes/soldier.png" alt="Hero 31">
+                    </div>
+                    <div class="hero-box" data-hero="sombra">
+                        <img src="../heroes/sombra.png" alt="Hero 32">
+                    </div>
+                    <div class="hero-box" data-hero="symmetra">
+                        <img src="../heroes/sym.png" alt="Hero 33">
+                    </div>
+                    <div class="hero-box" data-hero="torbjorn">
+                        <img src="../heroes/torb.png" alt="Hero 34">
+                    </div>
+                    <div class="hero-box" data-hero="tracer">
+                        <img src="../heroes/tracer.png" alt="Hero 35">
+                    </div>
+                    <div class="hero-box" data-hero="widowmaker">
+                        <img src="../heroes/widowmaker.png" alt="Hero 37">
+                    </div>
+                    <div class="hero-box" data-hero="pharah">
+                        <img src="../heroes/pharah.png" alt="Hero 25">
+                    </div>
+                    <div class="hero-box" data-hero="reaper">
+                        <img src="../heroes/reaper.png" alt="Hero 27">
+                    </div>
+                    <div class="hero-box" data-hero="mei">
+                        <img src="../heroes/Mei.png" alt="Hero 21">
+                    </div>
+                    <div class="hero-box" data-hero="junkrat">
+                        <img src="../heroes/Junkerrat.png" alt="Hero 15">
+                    </div>
+                    <!-- Add more DPS here -->
+                </div>
+            </div>
+         </div>
+         <div class="group">
+            <h2>Support</h2>
+            <div class="hero-boxes">
+                <div class="hero-box" data-hero="ana">
+                    <img src="../heroes/ana.png" alt="Ana">
+                </div>
+                <div class="hero-box" data-hero="brigitte">
+                    <img src="../heroes/brig.png" alt="Brigitte">
+                </div>
+                <div class="hero-box" data-hero="kiriko">
+                    <img src="../heroes/kiri.png" alt="Kiriko">
+                </div>
+                <div class="hero-box" data-hero="baptiste">
+                    <img src="../heroes/bap.png" alt="Baptiste">
+                </div>
+                <div class="hero-box" data-hero="juno">
+                    <img src="../heroes/juno.png" alt="Juno">
+                </div>
+                <div class="hero-box" data-hero="life-weaver">
+                    <img src="../heroes/life weaver.png" alt="Life Weaver">
+                </div>
+                <div class="hero-box" data-hero="lucio">
+                    <img src="../heroes/Lucio.png" alt="Lucio">
+                </div>
+                <div class="hero-box" data-hero="mercy">
+                    <img src="../heroes/mercy.png" alt="Mercy">
+                </div>
+                <div class="hero-box" data-hero="moira">
+                    <img src="../heroes/moira.png" alt="Moira">
+                </div>
+                <div class="hero-box" data-hero="zenyatta">
+                    <img src="../heroes/zen.png" alt="Zenyatta">
+                </div>
+                <div class="hero-box" data-hero="illari">
+                    <img src="../heroes/Illari.png" alt="Illari">
+                </div>
+                <!-- Add more Support here -->
+            </div>
+        </div>
+        
+<!-- Modal Popup -->
+<div id="hero-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="hero-name"></h2>
+        <img id="hero-image" src="" alt="Hero Image">
+        <p id="hero-description"></p>
     </div>
-    <div class="hero-banner overwatch">
-       
-    </div>
-    <div class="content">
-        <div class="countdown-box overwatch">
-            <h1>Countdown to the Next Battle Pass</h1>
-            <div id="overwatch-countdown" class="countdown overwatch"></div>
-        </div>
-        <div class="patch-notes-box overwatch">
-            <h1>Latest Patch Notes</h1>
-            <p>Check out the latest updates and improvements made to Overwatch.</p>
-            <a href="https://overwatch.blizzard.com/en-us/news/patch-notes/" target="_blank" class="patch-notes-link">View Overwatch Patch Notes</a>
-        </div>
-    </div>
-    <div class="heroes-container">
-        <!-- Repeat this block for each of the 41 heroes -->
-        <div class="hero-box">
-            <img src="../heroes/ana.png" alt="Hero 1">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/ashe.png" alt="Hero 2">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/bap.png" alt="Hero 3">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/bastion.png" alt="Hero 4">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/brig.png" alt="Hero 5">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/cass.png" alt="Hero 6">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/doom.png" alt="Hero 7">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/dva.png" alt="Hero 8">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/echo.png" alt="Hero 9">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/genji.png" alt="Hero 10">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/Hanzo.png" alt="Hero 11">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/hog.png" alt="Hero 12">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/Illari.png" alt="Hero 13">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/Junkerqueen.png" alt="Hero 14">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/Junkerrat.png" alt="Hero 15">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/juno.png" alt="Hero 16">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/kiri.png" alt="Hero 17">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/life weaver.png" alt="Hero 18">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/Lucio.png" alt="Hero 19">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/mauga.png" alt="Hero 20">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/Mei.png" alt="Hero 21">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/mercy.png" alt="Hero 22">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/moira.png" alt="Hero 23">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/orisa.png" alt="Hero 24">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/pharah.png" alt="Hero 25">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/ram.png" alt="Hero 26">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/reaper.png" alt="Hero 27">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/rein.png" alt="Hero 28">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/sigma.png" alt="Hero 29">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/soj.png" alt="Hero 30">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/soldier.png" alt="Hero 31">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/sombra.png" alt="Hero 32">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/sym.png" alt="Hero 33">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/torb.png" alt="Hero 34">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/tracer.png" alt="Hero 35">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/venture.png" alt="Hero 36">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/widowmaker.png" alt="Hero 37">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/winston.png" alt="Hero 38">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/wrecking ball.png" alt="Hero 39">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/zarya.png" alt="Hero 40">
-        </div>
-        <div class="hero-box">
-            <img src="../heroes/zen.png" alt="Hero 41">
-        </div>
-        <!-- Add other hero-boxes here -->
-    </div>
-  
-    
-    <footer>
-        &copy; 2024 Battle Pass Countdown. All rights reserved.
-    </footer>
-    <script>
+</div>
+
+<footer>&copy; 2024 Battle Pass Countdown. All rights reserved.</footer></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to open modal
+        function openModal() {
+            const modal = document.getElementById('hero-modal');
+            modal.style.display = 'block';
+        }
+
+        // Function to close modal
+        function closeModal() {
+            const modal = document.getElementById('hero-modal');
+            modal.style.display = 'none';
+        }
+
+        // Fetch and display hero info
+        async function fetchHeroInfo(hero) {
+            try {
+                const response = await fetch(`https://little-congruous-gatsby.glitch.me/api/overwatch/hero/${hero}`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                document.getElementById('hero-name').textContent = data.name || 'Hero Name Unavailable';
+                document.getElementById('hero-image').src = data.image || 'default-image.png';
+                document.getElementById('hero-description').textContent = data.description || 'Description not available';
+                openModal();
+            } catch (error) {
+                console.error('Error fetching hero info:', error);
+                document.getElementById('hero-name').textContent = 'Error';
+                document.getElementById('hero-image').src = 'error-image.png';
+                document.getElementById('hero-description').textContent = 'Unable to fetch hero info';
+                openModal();
+            }
+        }
+
+        // Event listeners for hero boxes
+        document.querySelectorAll('.hero-box').forEach(box => {
+            box.addEventListener('click', function () {
+                const hero = this.getAttribute('data-hero');
+                fetchHeroInfo(hero);
+            });
+        });
+
+        // Event listener for close button
+        document.querySelector('.close').addEventListener('click', closeModal);
+
+        // Close modal on outside click
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('hero-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
         function countdown(endDate, elementId) {
             const end = new Date(endDate).getTime();
             const x = setInterval(function() {
@@ -178,11 +249,10 @@
                 }
             }, 1000);
         }
-        window.onload = function() {
-            countdown("Oct 16, 2024 00:00:00", "overwatch-countdown");
-        };
-    </script>
+
+        countdown("Oct 16, 2024 00:00:00", "overwatch-countdown");
+    });
+</script>
+
 </body>
-
-
-
+</html>

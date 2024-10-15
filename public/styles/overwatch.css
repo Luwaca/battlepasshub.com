@@ -59,23 +59,20 @@
   body.overwatch {
     background-color: var(--background-50);
     color: var(--text-950);
-    margin: 0;
+    margin: 30px; /* Add 30px margin around the entire body */
     padding: 0;
     font-family: 'Arial', sans-serif;
 }
 
-.banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-100);
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.wrapper {
+    max-width: calc(100% - 60px); /* Ensure wrapper doesn't exceed the screen width */
+    margin: 0 auto;
 }
+
+.banner, .content, footer {
+    width: 100%; /* Ensure these elements take full width within wrapper */
+}
+
 
 .banner a {
     color: var(--text-800);
@@ -143,8 +140,8 @@
 
 .countdown.overwatch {
     font-size: 2em;
-    color: var(--text-950);
-    background-color: var(--background-400);
+    color: var(--text-150);
+    background-color: var(--accent-500);
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -162,30 +159,86 @@
 
 .heroes-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     gap: 20px;
     padding: 20px;
-    margin-top: 20px; /* Added margin-top for separation */
 }
 
-.hero-box {
-    width: 200px;
-    height: 250px;
+.group {
+    border: 1px solid #444; /* Optional: Visual separation */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.group h2 {
+    color: var(--text-950);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.group .hero-box {
+    width: 120px; /* Smaller width */
+    height: 150px; /* Smaller height */
     background-color: var(--background-100);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    flex-basis: calc(16.66% - 30px);
+    margin: 10px; /* Adjust spacing */
 }
 
-.hero-box img {
+.group .hero-box img {
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.group .hero-boxes {
+    display: flex;
+    flex-wrap: wrap; /* Ensure wrapping to next line if too many heroes */
+    gap: 10px; /* Adjust spacing between heroes */
+    justify-content: center; /* Center the hero icons */
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--background-100);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 footer {
