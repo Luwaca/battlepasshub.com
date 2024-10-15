@@ -1,24 +1,21 @@
-/* Basic styles */
-body.player-stats {
-    background-color: #121212;
+body {
+    background-color: #1b1b1b;
     color: #e0e0e0;
-    margin: 0;
+    margin: 0; /* Remove default body margin */
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 
-.banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.wrapper {
+    margin: 0 auto; /* Center the content */
+    padding: 0 40px; /* Add 40px padding on left and right */
+    max-width: calc(100% - 80px); /* Ensure the total width doesn't exceed the screen */
 }
+
+.banner, .content, footer {
+    width: 100%; /* Ensure these elements take full width of the wrapper */
+}
+
 
 .banner a {
     color: #e0e0e0;
@@ -27,6 +24,9 @@ body.player-stats {
     margin: 0 3px;
     transition: background-color 0.3s;
     font-weight: bold;
+    font-size: 1.2em; /* Increase font size */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); /* Add text shadow */
+    letter-spacing: 0.05em; /* Add tiny gap between each letter */
 }
 
 .banner a:hover {
@@ -59,10 +59,10 @@ body.player-stats {
 
 .search-bar {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center align items */
     align-items: center;
     padding: 10px;
-    background-color: #333;
+    background-color: #171717;
     margin-top: 5px; /* Adjust if needed to fit beneath the banner */
 }
 
@@ -72,6 +72,7 @@ body.player-stats {
     border: none;
     border-radius: 5px 0 0 5px;
     outline: none;
+    flex: 1; /* Ensure the input takes as much space as available */
 }
 
 .search-bar button {
@@ -171,25 +172,52 @@ body.player-stats {
     line-height: 1.5em;
 }
 
-/* Player info */
 .player-info {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Align items on the Y-axis */
+    justify-content: flex-start; /* Align items on the X-axis */
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.player-info {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Create space between items */
+    width: 100%;
     margin-bottom: 20px;
 }
 
 .player-info img {
-    width: 100px;
-    height: 100px;
+    width: 120px; /* Set desired width */
+    height: 120px; /* Set desired height */
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 20px; /* Space between image and username */
 }
 
 .player-info p {
-    margin: 5px 10px;
-    font-size: 1.2em;
+    margin: 0 20px; /* Space between username and endorsement */
 }
+
+.endorsement {
+    margin-left: auto; /* Push endorsement to the far right */
+    display: flex;
+    align-items: center; /* Align endorsement content vertically */
+}
+
+.endorsement p {
+    display: flex;
+    align-items: center; /* Align text and icon horizontally */
+}
+
+.endorsement span {
+    margin-right: 10px; /* Space between endorsement text and icon */
+}
+
+
+
+
 
 /* Section styling */
 .section {
@@ -221,8 +249,6 @@ body.player-stats {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
+    background-color: #171717;
     color: #e0e0e0;
-    position: relative;
-    width: 100%;
 }

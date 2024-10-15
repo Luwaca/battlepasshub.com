@@ -5,31 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Stats</title>
     <link rel="stylesheet" href="styles/player-stats.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="player-stats">
-    <div class="banner">
-        <a href="../index.html">Home</a>
-        <a href="overwatch.html">Overwatch</a>
-        <a href="fortnite.html">Fortnite</a>
-        <a href="player-stats.html">Player Stats</a>
-    </div>
-    <div class="hero-banner player-stats">
-        <h1>Player Stats</h1>
-        <p>View and analyze player statistics for Overwatch and Fortnite</p>
-    </div>
-    <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Enter your username..." list="suggestions">
-        <datalist id="suggestions"></datalist>
-        <button onclick="searchStats()">Search</button>
-    </div>
+    <div class="wrapper">
+        <div class="banner">
+            <a href="../index.html">Home</a>
+            <a href="overwatch.html">Overwatch</a>
+            <a href="fortnite.html">Fortnite</a>
+            <a href="player-stats.html">Player Stats</a>
+        </div>
+        <div class="hero-banner player-stats"></div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Enter your username..." list="suggestions">
+            <datalist id="suggestions"></datalist>
+            <button onclick="searchStats()">Search</button>
+        </div>
     <div class="content">
         <section class="stats-box">
             <h2>Player Stats</h2>
             <div id="stats-content">
-                <p>Enter a username to see stats...</p>
+                <div class="player-info">
+                    <img src="/placeholder/empty profile pic.png" alt="Player Icon">
+                    <p><strong>Username:</strong> <span id="username"></span></p>
+                    <div class="endorsement">
+                        <p><strong></strong> <span id="endorsement"></span> <img src="/placeholder/endorcement.png" alt="Endorsement Icon" id="endorsement-icon"></p>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                <div class="categories">
+                    <div class="section overall">
+                        <h3>Overall Stats</h3>
+                        <p><strong>Games Played:</strong> <span id="games-played-overall"></span></p>
+                        <p><strong>Games Won:</strong> <span id="games-won-overall"></span></p>
+                        <p><strong>Games Lost:</strong> <span id="games-lost-overall"></span></p>
+                    </div>
+                    <div class="section quickplay">
+                        <h3>Quickplay</h3>
+                        <p><strong>Games Played:</strong> <span id="games-played-quickplay"></span></p>
+                        <p><strong>Games Won:</strong> <span id="games-won-quickplay"></span></p>
+                    </div>
+                </div>
+                <div class="section competitive">
+                    <h3>Competitive</h3>
+                    <p><strong>Games Played:</strong> <span id="games-played-competitive"></span></p>
+                    <p><strong>Games Won:</strong> <span id="games-won-competitive"></span></p>
+                    
+                    <div class="role tank">
+                        <h4>TANK</h4>
+                        <div class="rating">
+                            <p><strong>Rank:</strong> <span id="rank-tank"></span> <img src="/placeholder/R.png" alt="Tank Rank Icon" id="rank-icon-tank"></p>
+                            <p><strong>Tier:</strong> <span id="tier-tank"></span> <img src="/placeholder/1.png" alt="Tier Icon" id="tier-icon-tank"></p>
+                        </div>
+                    </div>
+                    <div class="role dps">
+                        <h4>DPS</h4>
+                        <div class="rating">
+                            <p><strong>Rank:</strong> <span id="rank-dps"></span> <img src="/placeholder/R.png" alt="DPS Rank Icon" id="rank-icon-dps"></p>
+                            <p><strong>Tier:</strong> <span id="tier-dps"></span> <img src="/placeholder/1.png" alt="Tier Icon" id="tier-icon-dps"></p>
+                        </div>
+                    </div>
+                    <div class="role support">
+                        <h4>SUPPORT</h4>
+                        <div class="rating">
+                            <p><strong>Rank:</strong> <span id="rank-support"></span> <img src="/placeholder/R.png" alt="Support Rank Icon" id="rank-icon-support"></p>
+                            <p><strong>Tier:</strong> <span id="tier-support"></span> <img src="/placeholder/1.png" alt="Tier Icon" id="tier-icon-support"></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
+    
     <footer>
         &copy; 2024 Battle Pass Countdown. All rights reserved.
     </footer>
@@ -55,74 +106,47 @@
         }
 
         async function searchStats() {
-            let username = document.getElementById('search-input').value;
-            username = username.replace('#', '-'); // Replace # with -
+    let username = document.getElementById('search-input').value;
+    username = username.replace('#', '-'); // Replace # with -
 
-            // Add the username to the recent searches if it's not already there
-            if (!recentSearches.includes(username)) {
-                recentSearches.push(username);
-                updateRecentSearchesDropdown();
-            }
+    // Add the username to the recent searches if it's not already there
+    if (!recentSearches.includes(username)) {
+        recentSearches.push(username);
+        updateRecentSearchesDropdown();
+    }
 
-            try {
-                const response = await fetch(`https://little-congruous-gatsby.glitch.me/api/overwatch/stats/${username}`);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                console.log('Fetched data:', data); // Log the fetched data
-
-                // Display Overwatch Stats
-                const statsContent = document.getElementById('stats-content');
-                if (data && data.name) {
-                    statsContent.innerHTML = `
-                        <div class="player-info">
-                            <img src="${data.icon}" alt="${data.name}'s icon">
-                            <div>
-                                <p><strong>Username:</strong> ${data.name}</p>
-                                <p><strong>Endorsement Level:</strong> ${data.endorsement} <img src="${data.endorsementIcon}" alt="Endorsement Icon"></p>
-                            </div>
-                        </div>
-                        <div class="categories">
-                            <div class="section overall">
-                                <h3>Overall Stats</h3>
-                                <p><strong>Games Played:</strong> ${data.gamesPlayed}</p>
-                                <p><strong>Games Won:</strong> ${data.gamesWon}</p>
-                                <p><strong>Games Lost:</strong> ${data.gamesLost}</p>
-                            </div>
-                            <div class="section quickplay">
-                                <h3>Quickplay</h3>
-                                <p><strong>Games Played:</strong> ${data.quickPlayStats.games.played}</p>
-                                <p><strong>Games Won:</strong> ${data.quickPlayStats.games.won}</p>
-                            </div>
-                        </div>
-                        <div class="section competitive">
-                            <h3>Competitive</h3>
-                            <p><strong>Games Played:</strong> ${data.competitiveStats.games.played}</p>
-                            <p><strong>Games Won:</strong> ${data.competitiveStats.games.won}</p>
-                            <h4>Ratings</h4>
-                            ${['tank', 'offense', 'support'].map(role => {
-                                const rating = data.ratings.find(r => r.role.toLowerCase() === role) || { group: 'Unranked', tier: 'Unranked' };
-                                const roleName = role === 'offense' ? 'DPS' : role.toUpperCase();
-                                return `
-                                    <div class="role ${role}">
-                                        <h4>${roleName}</h4>
-                                        <div class="rating">
-                                            <p><strong>Rank:</strong> ${rating.group} ${rating.rankIcon ? `<img src="${rating.rankIcon}" alt="${rating.group} Rank Icon">` : ''}</p>
-                                            <p><strong>Tier:</strong> ${rating.tier} ${rating.divisionIcon ? `<img src="${rating.divisionIcon}" alt="Division Icon">` : ''}</p>
-                                        </div>
-                                    </div>
-                                `;
-                            }).join('')}
-                        </div>
-                    `;
-                } else {
-                    statsContent.innerText = 'Private Account';
-                }
-            } catch (error) {
-                console.error('Error fetching stats:', error);
-                document.getElementById('stats-content').innerText = 'Private Account';
-            }
+    try {
+        const response = await fetch(`https://little-congruous-gatsby.glitch.me/api/overwatch/stats/${username}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
+        const data = await response.json();
+        console.log('Fetched data:', data); // Log the fetched data
+
+        // Update Player Info
+        document.getElementById('username').textContent = data.name || 'N/A';
+        document.getElementById('endorsement').textContent = data.endorsement || 'N/A';
+        document.getElementById('endorsement-icon').src = data.endorsementIcon || 'placeholder.png';
+        document.querySelector('.player-info img').src = data.icon || 'placeholder.png';
+
+        // Update Overall Stats
+        document.getElementById('games-played-overall').textContent = data.gamesPlayed || 'N/A';
+        document.getElementById('games-won-overall').textContent = data.gamesWon || 'N/A';
+        document.getElementById('games-lost-overall').textContent = data.gamesLost || 'N/A';
+
+        // Update Quickplay Stats
+        document.getElementById('games-played-quickplay').textContent = data.quickPlayStats.games.played || 'N/A';
+        document.getElementById('games-won-quickplay').textContent = data.quickPlayStats.games.won || 'N/A';
+
+        // Update Competitive Stats
+        document.getElementById('games-played-competitive').textContent = data.competitiveStats.games.played || 'N/A';
+        document.getElementById('games-won-competitive').textContent = data.competitiveStats.games.won || 'N/A';
+    } catch (error) {
+        console.error('Error fetching stats:', error);
+        document.getElementById('stats-content').innerText = 'Private Account';
+    }
+}
+
     </script>
+    </div>
 </html>
