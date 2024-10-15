@@ -1,56 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Player Stats</title>
-        <link rel="stylesheet" href="styles/player-stats.css">
-    </head>
-    
-    
-    
-    <body class="player-stats">
-        <div class="banner">
-            <a href="../index.html">Home</a>
-            <a href="overwatch.html">Overwatch</a>
-            <a href="fortnite.html">Fortnite</a>
-            <a href="player-stats.html">Player Stats</a>
-        </div>
-        <div class="hero-banner player-stats">
-           
-        </div>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Enter your username..." list="recent-searches">
-            <datalist id="recent-searches"></datalist>
-            <button onclick="searchStats()">Search</button>
-        </div>
-        
-        <div class="content">
-            <section class="stats-box">
-                <h2>Player Stats</h2>
-                <div id="stats-content">
-                    <p>Enter a username to see stats...</p>
-                </div>
-            </section>
-        </div>
-        <footer>
-            &copy; 2024 Battle Pass Countdown. All rights reserved.
-        </footer>
-    </body>
-    
-    
-    
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Stats</title>
+    <link rel="stylesheet" href="styles/player-stats.css">
+</head>
+<body class="player-stats">
+    <div class="banner">
+        <a href="../index.html">Home</a>
+        <a href="overwatch.html">Overwatch</a>
+        <a href="fortnite.html">Fortnite</a>
+        <a href="player-stats.html">Player Stats</a>
+    </div>
+    <div class="hero-banner player-stats">
+        <h1>Player Stats</h1>
+        <p>View and analyze player statistics for Overwatch and Fortnite</p>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Enter your username..." list="suggestions">
+        <datalist id="suggestions"></datalist>
+        <button onclick="searchStats()">Search</button>
+    </div>
+    <div class="content">
+        <section class="stats-box">
+            <h2>Player Stats</h2>
+            <div id="stats-content">
+                <p>Enter a username to see stats...</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        &copy; 2024 Battle Pass Countdown. All rights reserved.
+    </footer>
     <script>
         // Store recent searches in an array
         let recentSearches = [];
-        
+
         document.getElementById('search-input').addEventListener('keypress', function (event) {
             if (event.key === 'Enter') {
                 searchStats();
             }
         });
-    
+
         // Add recent searches to the dropdown
         function updateRecentSearchesDropdown() {
             const dataList = document.getElementById('suggestions');
@@ -61,17 +53,17 @@
                 dataList.appendChild(option);
             });
         }
-    
+
         async function searchStats() {
             let username = document.getElementById('search-input').value;
             username = username.replace('#', '-'); // Replace # with -
-    
+
             // Add the username to the recent searches if it's not already there
             if (!recentSearches.includes(username)) {
                 recentSearches.push(username);
                 updateRecentSearchesDropdown();
             }
-    
+
             try {
                 const response = await fetch(`https://little-congruous-gatsby.glitch.me/api/overwatch/stats/${username}`);
                 if (!response.ok) {
@@ -79,7 +71,7 @@
                 }
                 const data = await response.json();
                 console.log('Fetched data:', data); // Log the fetched data
-    
+
                 // Display Overwatch Stats
                 const statsContent = document.getElementById('stats-content');
                 if (data && data.name) {
@@ -133,7 +125,4 @@
             }
         }
     </script>
-    
-    
-</body>
 </html>
