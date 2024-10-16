@@ -1,9 +1,77 @@
 body {
-    background-color: #1b1b1b;
-    color: #e0e0e0;
+    background: url('../../design/background.png') no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
+}
+
+/* Font face for BigNoodleTitling */
+@font-face {
+    font-family: 'BigNoodleTitling';
+    src: url('fonts/BigNoodleTitling.ttf') format('truetype');
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'BigNoodleTitling', sans-serif;
+}
+
+.wrapper {
+    max-width: calc(100% - 400px); /* Ensure wrapper doesn't exceed the screen width */
+    margin: 0 auto;
+}
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px; /* Adjust width as needed */
+    height: 100vh; /* Full height of the viewport */
+    background: rgba(14, 14, 14, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Optional: adds a blur effect to the background */
+    color: #e0e0e0;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 20px 0;
+}
+
+.navbar a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #FA9C1D;
+}
+
+/* Adjust font sizes */
+h1 {
+    font-size: 3em; /* Bigger headers */
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+body {
+    font-size: 2em; /* Bigger body text */
 }
 
 .wrapper {
@@ -34,16 +102,16 @@ body {
 
 .hero-banner.player-stats {
     background: url('../../banners/player-stats-banner.jpg') no-repeat center center;
-    background-size: cover;
-    color: #ffffff;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-size: cover; /* Ensure the image covers the entire banner */
+    border: 2px solid #ffffff; /* White outline */
+    border-radius: 15px; /* Rounded edges */
+    color: #FA9C1D;
+    height: 50vh; /* Smaller height */
     text-align: center;
     padding: 20px;
     margin-top: 60px;
+    margin-left: 170px; /* 150px for navbar width + 20px space */
+    margin-right: 20px;
 }
 
 .hero-banner.player-stats h1 {
@@ -59,9 +127,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    background-color: #171717;
-    margin-top: 5px;
+    padding-top: 30px;
+    backdrop-filter: blur(5px);
+   
 }
 
 .search-bar input {
@@ -76,7 +144,7 @@ body {
     padding: 10px;
     font-size: 1em;
     background-color: #FA9C1D;
-    color: #fff;
+    color: #ffffff;
     border: none;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
@@ -84,7 +152,7 @@ body {
 }
 
 .search-bar button:hover {
-    background-color: #e68a00;
+    background-color: #000000;
 }
 
 .categories {
@@ -156,7 +224,8 @@ body {
 
 /* Stats box styling */
 .stats-box {
-    background-color: #1e1e1e;
+    background: rgba(14, 14, 14, 0.7);
+    backdrop-filter: blur(5px);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -173,7 +242,7 @@ body {
 
 /* Stats content */
 #stats-content {
-    color: #e0e0e0;
+    color: #aca8a3;
     font-size: 1.5em;
     line-height: 1.5em;
 }
@@ -251,10 +320,23 @@ body {
     vertical-align: middle;
 }
 
-/* Footer styling */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #171717;
-    color: #e0e0e0;
+    padding: 10px;
+    background-color: rgba(23, 23, 23, 0.7); /* Semi-transparent */
+    color: #a0a0a0; /* Lighter color */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8em; /* Smaller font size */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: opacity 0.5s; /* Smooth transition */
+}
+
+footer:hover {
+    opacity: 1;
+}
+
+footer:not(:hover) {
+    opacity: 0.1; /* Make it less visible when not hovered */
 }

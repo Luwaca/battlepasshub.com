@@ -1,113 +1,94 @@
-body.home {
-    background-color: #121212;
-    color: #e0e0e0;
+/* Image background */
+body {
+    background: url('../../design/background.png') no-repeat center center fixed;
+    background-size: cover;   
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 
-.banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
+/* Font face for BigNoodleTitling */
+@font-face {
+    font-family: 'BigNoodleTitling';
+    src: url('fonts/BigNoodleTitling.ttf') format('truetype');
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'BigNoodleTitling', sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
     position: fixed;
-    width: 100%;
     top: 0;
+    left: 0;
+    width: 150px; /* Adjust width as needed */
+    height: 100vh; /* Full height of the viewport */
+    background: rgba(14, 14, 14, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Optional: adds a blur effect to the background */
+    color: #e0e0e0;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.banner a {
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 20px 0;
+}
+
+.navbar a {
     color: #e0e0e0;
     text-decoration: none;
-    padding: 8px 10px;
-    margin: 0 3px;
-    transition: background-color 0.3s;
-    font-weight: bold;
-}
-
-.banner a:hover {
-    background-color: #575757;
-}
-
-.hero-banner.home {
-    height: 60vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: url('banners/home-banner.jpg') no-repeat center center;
-    background-size: cover;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px #000;
-    padding: 20px;
-    margin-top: 60px;
-    text-align: center;
-}
-
-.hero-banner.home h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.hero-banner.home p {
     font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.section-overwatch,
-.section-fortnite {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 80%;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.section-overwatch h2 {
+.navbar a:hover {
     color: #FA9C1D;
 }
 
-.section-fortnite h2 {
-    color: #5FCEEA;
+/* Adjust font sizes */
+h1 {
+    font-size: 3em; /* Bigger headers */
 }
 
-.cta-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #333;
-    transition: background-color 0.3s;
+h2 {
+    font-size: 2.5em;
 }
 
-.section-overwatch .cta-button:hover {
-    background-color: #FA9C1D;
+h3 {
+    font-size: 2em;
 }
 
-.section-fortnite .cta-button:hover {
-    background-color: #5FCEEA;
+body {
+    font-size: 2em; /* Bigger body text */
 }
-
+/* Footer styling */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #e0e0e0;
-    position: relative;
+    padding: 10px;
+    background-color: rgba(23, 23, 23, 0.7); /* Semi-transparent */
+    color: #a0a0a0; /* Lighter color */
+    position: fixed;
+    bottom: 0;
     width: 100%;
+    font-size: 0.8em; /* Smaller font size */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: opacity 0.5s; /* Smooth transition */
 }
+
+footer:hover {
+    opacity: 1;
+}
+
+footer:not(:hover) {
+    opacity: 0.1; /* Make it less visible when not hovered */
+}
+
