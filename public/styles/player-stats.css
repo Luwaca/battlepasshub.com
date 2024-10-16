@@ -1,21 +1,20 @@
 body {
     background-color: #1b1b1b;
     color: #e0e0e0;
-    margin: 0; /* Remove default body margin */
+    margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
 }
 
 .wrapper {
-    margin: 0 auto; /* Center the content */
-    padding: 0 40px; /* Add 40px padding on left and right */
-    max-width: calc(100% - 80px); /* Ensure the total width doesn't exceed the screen */
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: calc(100% - 80px);
 }
 
 .banner, .content, .footer {
-    width: calc(100% - 60px); /* Adjust width to account for padding */
+    width: calc(100% - 60px);
 }
-
 
 .banner a {
     color: #e0e0e0;
@@ -24,16 +23,15 @@ body {
     margin: 0 3px;
     transition: background-color 0.3s;
     font-weight: bold;
-    font-size: 1.2em; /* Increase font size */
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); /* Add text shadow */
-    letter-spacing: 0.05em; /* Add tiny gap between each letter */
+    font-size: 1.2em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.05em;
 }
 
 .banner a:hover {
     background-color: #575757;
 }
 
-/* Hero banner styling */
 .hero-banner.player-stats {
     background: url('../../banners/player-stats-banner.jpg') no-repeat center center;
     background-size: cover;
@@ -63,7 +61,7 @@ body {
     align-items: center;
     padding: 10px;
     background-color: #171717;
-    margin-top: 5px; /* Adjust if needed to fit beneath the banner */
+    margin-top: 5px;
 }
 
 .search-bar input {
@@ -89,56 +87,65 @@ body {
     background-color: #e68a00;
 }
 
-/* Section container for categories */
 .categories {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* General Stats Section */
+.section.general {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Damage Role Stats */
+.role.damage {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Support Role Stats */
+.role.support {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Tank Role Stats */
+.role.tank {
+    flex: 1;
+    min-width: 300px;
+}
+/* Roles section styling */
+.section.roles {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
     margin-top: 20px;
-    margin-bottom: 40px; /* Increased bottom margin for more space */
-    gap: 20px; /* Add spacing between categories */
 }
 
-/* Individual section styling */
-.section {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left; /* Adjust alignment as needed */
-}
-
-/* Overall and Quickplay sections */
-.section.overall,
-.section.quickplay {
-    width: calc(50% - 10px); /* Adjust width to be half of the container */
-}
-
-/* Competitive section */
-.section.competitive {
-    width: 100%; /* Make it as wide as the combined width of the other two sections */
-}
-
-/* Competitive stats */
-.section.competitive h4 {
-    margin-top: 20px;
-    color: #FA9C1D;
-    font-size: 1.8em;
-    border-bottom: 2px solid #FA9C1D;
-    padding-bottom: 5px;
-}
-
+/* Adjust individual role containers to fit within roles section */
 .role {
-    margin-top: 20px;
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
 }
 
-.role img {
+/* Competitive stats rating */
+.competitive-stats .rating {
+    margin: 10px 0;
+}
+
+.competitive-stats .rating img {
     width: 50px;
     height: 50px;
     vertical-align: middle;
 }
 
 
-/* Content container */
 .content {
     display: flex;
     flex-direction: column;

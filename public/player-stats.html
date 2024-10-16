@@ -28,27 +28,67 @@
                     <div class="player-info">
                         <img src="/placeholder/empty profile pic.png" alt="Player Icon">
                         <p><strong>Username:</strong> <span id="username"></span></p>
-                        <div class="endorsement">
-                            <p><strong>Endorsement Level:</strong> <span id="endorsement"></span> <img src="/placeholder/endorsement.png" alt="Endorsement Icon" id="endorsement-icon"></p>
-                        </div>
                     </div>
                     <div class="categories">
-                        <div class="section overall">
-                            <h3>Overall Stats</h3>
-                            <p><strong>Games Played:</strong> <span id="games-played-overall"></span></p>
-                            <p><strong>Games Won:</strong> <span id="games-won-overall"></span></p>
-                            <p><strong>Games Lost:</strong> <span id="games-lost-overall"></span></p>
+                        <div class="section general">
+                            <h3>General Stats</h3>
+                            <p><strong>Games Played:</strong> <span id="general-games-played"></span></p>
+                            <p><strong>Games Won:</strong> <span id="general-games-won"></span></p>
+                            <p><strong>Games Lost:</strong> <span id="general-games-lost"></span></p>
+                            <p><strong>Time Played:</strong> <span id="general-time-played"></span></p>
+                            <p><strong>Win Rate:</strong> <span id="general-winrate"></span>%</p>
+                            <p><strong>KDA:</strong> <span id="general-kda"></span></p>
+                            <p><strong>Total Eliminations:</strong> <span id="general-total-eliminations"></span></p>
+                            <p><strong>Total Assists:</strong> <span id="general-total-assists"></span></p>
+                            <p><strong>Total Deaths:</strong> <span id="general-total-deaths"></span></p>
+                            <p><strong>Total Damage:</strong> <span id="general-total-damage"></span></p>
+                            <p><strong>Total Healing:</strong> <span id="general-total-healing"></span></p>
                         </div>
-                        <div class="section quickplay">
-                            <h3>Quickplay</h3>
-                            <p><strong>Games Played:</strong> <span id="games-played-quickplay"></span></p>
-                            <p><strong>Games Won:</strong> <span id="games-won-quickplay"></span></p>
+                        <div class="section roles">
+                            <h3>Role Stats</h3>
+                            <div class="role damage">
+                                <h4>Damage</h4>
+                                <p><strong>Games Played:</strong> <span id="damage-games-played"></span></p>
+                                <p><strong>Games Won:</strong> <span id="damage-games-won"></span></p>
+                                <p><strong>Games Lost:</strong> <span id="damage-games-lost"></span></p>
+                                <p><strong>Time Played:</strong> <span id="damage-time-played"></span></p>
+                                <p><strong>Win Rate:</strong> <span id="damage-winrate"></span>%</p>
+                                <p><strong>KDA:</strong> <span id="damage-kda"></span></p>
+                                <p><strong>Total Eliminations:</strong> <span id="damage-total-eliminations"></span></p>
+                                <p><strong>Total Assists:</strong> <span id="damage-total-assists"></span></p>
+                                <p><strong>Total Deaths:</strong> <span id="damage-total-deaths"></span></p>
+                                <p><strong>Total Damage:</strong> <span id="damage-total-damage"></span></p>
+                                <p><strong>Total Healing:</strong> <span id="damage-total-healing"></span></p>
+                            </div>
+                            <div class="role support">
+                                <h4>Support</h4>
+                                <p><strong>Games Played:</strong> <span id="support-games-played"></span></p>
+                                <p><strong>Games Won:</strong> <span id="support-games-won"></span></p>
+                                <p><strong>Games Lost:</strong> <span id="support-games-lost"></span></p>
+                                <p><strong>Time Played:</strong> <span id="support-time-played"></span></p>
+                                <p><strong>Win Rate:</strong> <span id="support-winrate"></span>%</p>
+                                <p><strong>KDA:</strong> <span id="support-kda"></span></p>
+                                <p><strong>Total Eliminations:</strong> <span id="support-total-eliminations"></span></p>
+                                <p><strong>Total Assists:</strong> <span id="support-total-assists"></span></p>
+                                <p><strong>Total Deaths:</strong> <span id="support-total-deaths"></span></p>
+                                <p><strong>Total Damage:</strong> <span id="support-total-damage"></span></p>
+                                <p><strong>Total Healing:</strong> <span id="support-total-healing"></span></p>
+                            </div>
+                            <div class="role tank">
+                                <h4>Tank</h4>
+                                <p><strong>Games Played:</strong> <span id="tank-games-played"></span></p>
+                                <p><strong>Games Won:</strong> <span id="tank-games-won"></span></p>
+                                <p><strong>Games Lost:</strong> <span id="tank-games-lost"></span></p>
+                                <p><strong>Time Played:</strong> <span id="tank-time-played"></span></p>
+                                <p><strong>Win Rate:</strong> <span id="tank-winrate"></span>%</p>
+                                <p><strong>KDA:</strong> <span id="tank-kda"></span></p>
+                                <p><strong>Total Eliminations:</strong> <span id="tank-total-eliminations"></span></p>
+                                <p><strong>Total Assists:</strong> <span id="tank-total-assists"></span></p>
+                                <p><strong>Total Deaths:</strong> <span id="tank-total-deaths"></span></p>
+                                <p><strong>Total Damage:</strong> <span id="tank-total-damage"></span></p>
+                                <p><strong>Total Healing:</strong> <span id="tank-total-healing"></span></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="section competitive">
-                        <h3>Competitive</h3>
-                        <p><strong>Games Played:</strong> <span id="games-played-competitive"></span></p>
-                        <p><strong>Games Won:</strong> <span id="games-won-competitive"></span></p>
                     </div>
                 </div>
             </section>
@@ -81,19 +121,61 @@
                 const data = await fetchStatsSummary(playerId);
                 console.log('Fetched data:', data); // Log the fetched data
     
-                // Display Overwatch Stats
-                const statsContent = document.getElementById('stats-content');
                 if (data) {
+                    // Update General Stats
                     document.getElementById('username').textContent = username;
-                    document.getElementById('games-played-overall').textContent = data.gamesPlayed || 'N/A';
-                    document.getElementById('games-won-overall').textContent = data.gamesWon || 'N/A';
-                    document.getElementById('games-lost-overall').textContent = data.gamesLost || 'N/A';
-                    document.getElementById('games-played-quickplay').textContent = data.quickplay.gamesPlayed || 'N/A';
-                    document.getElementById('games-won-quickplay').textContent = data.quickplay.gamesWon || 'N/A';
-                    document.getElementById('games-played-competitive').textContent = data.competitive.gamesPlayed || 'N/A';
-                    document.getElementById('games-won-competitive').textContent = data.competitive.gamesWon || 'N/A';
+                    document.getElementById('general-games-played').textContent = data.general.games_played || 'N/A';
+                    document.getElementById('general-games-won').textContent = data.general.games_won || 'N/A';
+                    document.getElementById('general-games-lost').textContent = data.general.games_lost || 'N/A';
+                    document.getElementById('general-time-played').textContent = (data.general.time_played / 3600).toFixed(2) + ' hrs' || 'N/A'; // Convert seconds to hours
+                    document.getElementById('general-winrate').textContent = data.general.winrate || 'N/A';
+                    document.getElementById('general-kda').textContent = data.general.kda || 'N/A';
+                    document.getElementById('general-total-eliminations').textContent = data.general.total.eliminations || 'N/A';
+                    document.getElementById('general-total-assists').textContent = data.general.total.assists || 'N/A';
+                    document.getElementById('general-total-deaths').textContent = data.general.total.deaths || 'N/A';
+                    document.getElementById('general-total-damage').textContent = data.general.total.damage || 'N/A';
+                    document.getElementById('general-total-healing').textContent = data.general.total.healing || 'N/A';
+    
+                    // Update Damage Role Stats
+                    document.getElementById('damage-games-played').textContent = data.roles.damage.games_played || 'N/A';
+                    document.getElementById('damage-games-won').textContent = data.roles.damage.games_won || 'N/A';
+                    document.getElementById('damage-games-lost').textContent = data.roles.damage.games_lost || 'N/A';
+                    document.getElementById('damage-time-played').textContent = (data.roles.damage.time_played / 3600).toFixed(2) + ' hrs' || 'N/A';
+                    document.getElementById('damage-winrate').textContent = data.roles.damage.winrate || 'N/A';
+                    document.getElementById('damage-kda').textContent = data.roles.damage.kda || 'N/A';
+                    document.getElementById('damage-total-eliminations').textContent = data.roles.damage.total.eliminations || 'N/A';
+                    document.getElementById('damage-total-assists').textContent = data.roles.damage.total.assists || 'N/A';
+                    document.getElementById('damage-total-deaths').textContent = data.roles.damage.total.deaths || 'N/A';
+                    document.getElementById('damage-total-damage').textContent = data.roles.damage.total.damage || 'N/A';
+                    document.getElementById('damage-total-healing').textContent = data.roles.damage.total.healing || 'N/A';
+    
+                    // Update Support Role Stats
+                    document.getElementById('support-games-played').textContent = data.roles.support.games_played || 'N/A';
+                    document.getElementById('support-games-won').textContent = data.roles.support.games_won || 'N/A';
+                    document.getElementById('support-games-lost').textContent = data.roles.support.games_lost || 'N/A';
+                    document.getElementById('support-time-played').textContent = (data.roles.support.time_played / 3600).toFixed(2) + ' hrs' || 'N/A';
+                    document.getElementById('support-winrate').textContent = data.roles.support.winrate || 'N/A';
+                    document.getElementById('support-kda').textContent = data.roles.support.kda || 'N/A';
+                    document.getElementById('support-total-eliminations').textContent = data.roles.support.total.eliminations || 'N/A';
+                    document.getElementById('support-total-assists').textContent = data.roles.support.total.assists || 'N/A';
+                    document.getElementById('support-total-deaths').textContent = data.roles.support.total.deaths || 'N/A';
+                    document.getElementById('support-total-damage').textContent = data.roles.support.total.damage || 'N/A';
+                    document.getElementById('support-total-healing').textContent = data.roles.support.total.healing || 'N/A';
+    
+                    // Update Tank Role Stats
+                    document.getElementById('tank-games-played').textContent = data.roles.tank.games_played || 'N/A';
+                    document.getElementById('tank-games-won').textContent = data.roles.tank.games_won || 'N/A';
+                    document.getElementById('tank-games-lost').textContent = data.roles.tank.games_lost || 'N/A';
+                    document.getElementById('tank-time-played').textContent = (data.roles.tank.time_played / 3600).toFixed(2) + ' hrs' || 'N/A';
+                    document.getElementById('tank-winrate').textContent = data.roles.tank.winrate || 'N/A';
+                    document.getElementById('tank-kda').textContent = data.roles.tank.kda || 'N/A';
+                    document.getElementById('tank-total-eliminations').textContent = data.roles.tank.total.eliminations || 'N/A';
+                    document.getElementById('tank-total-assists').textContent = data.roles.tank.total.assists || 'N/A';
+                    document.getElementById('tank-total-deaths').textContent = data.roles.tank.total.deaths || 'N/A';
+                    document.getElementById('tank-total-damage').textContent = data.roles.tank.total.damage || 'N/A';
+                    document.getElementById('tank-total-healing').textContent = data.roles.tank.total.healing || 'N/A';
                 } else {
-                    statsContent.innerText = 'Private Account or No Data Found';
+                    document.getElementById('stats-content').innerText = 'Private Account or No Data Found';
                 }
             } catch (error) {
                 console.error('Error fetching stats:', error);
@@ -101,6 +183,8 @@
             }
         }
     </script>
+    
+    
     
 </body>
 </html>
