@@ -1,10 +1,14 @@
 /* Image background */
 body {
     background: url('../../design/background.png') no-repeat center center fixed;
-    background-size: cover;   
+    background-size: cover; 
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
+}
+
+body.light-mode {
+    filter: invert(1) hue-rotate(180deg); /* Invert colors */
 }
 
 /* Font face for BigNoodleTitling */
@@ -70,6 +74,19 @@ h3 {
 body {
     font-size: 2em; /* Bigger body text */
 }
+
+body.light-mode {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+body.light-mode .navbar,
+body.light-mode .content,
+body.light-mode .footer,
+body.light-mode .hero-banner.overwatch {
+    filter: invert(1) hue-rotate(180deg); /* Invert these elements back to normal */
+}
+
+
 /* Footer styling */
 footer {
     text-align: center;

@@ -17,12 +17,30 @@
                 <li><a href="/public/player-stats.html">Player Stats</a></li>
                 <!-- Add more links as needed -->
             </ul>
+            <button id="theme-toggle" onclick="toggleTheme()">Light Mode</button>
         </div>
-        
+
     </header>
    
     <footer>
         &copy; 2024 Battle Pass Countdown. All rights reserved.
     </footer>
+    <script>
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle("light-mode");
+
+    const button = document.getElementById("theme-toggle");
+    if (body.classList.contains("light-mode")) {
+        button.textContent = "Dark Mode";
+    } else {
+        button.textContent = "Light Mode";
+    }
+}
+</script>
+
+        
+        
+        
 </body>
 </html>
