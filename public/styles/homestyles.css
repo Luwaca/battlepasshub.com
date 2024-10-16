@@ -1,14 +1,9 @@
-/* Image background */
 body {
     background: url('../../design/background.png') no-repeat center center fixed;
     background-size: cover; 
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
-}
-
-body.light-mode {
-    filter: invert(1) hue-rotate(180deg); /* Invert colors */
 }
 
 /* Font face for BigNoodleTitling */
@@ -19,6 +14,24 @@ body.light-mode {
 
 body, h1, h2, h3, h4, h5, h6 {
     font-family: 'BigNoodleTitling', sans-serif;
+}
+#theme-toggle {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: none; /* Remove white background */
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle img {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensures the image fills the button */
 }
 
 /* Navigation Bar */
@@ -75,19 +88,10 @@ body {
     font-size: 2em; /* Bigger body text */
 }
 
-body.light-mode {
-    filter: invert(1) hue-rotate(180deg);
-}
-
-body.light-mode .navbar,
-body.light-mode .content,
-body.light-mode .footer,
-body.light-mode .hero-banner.overwatch {
-    filter: invert(1) hue-rotate(180deg); /* Invert these elements back to normal */
-}
 
 
-/* Footer styling */
+
+
 footer {
     text-align: center;
     padding: 10px;
@@ -108,4 +112,3 @@ footer:hover {
 footer:not(:hover) {
     opacity: 0.1; /* Make it less visible when not hovered */
 }
-

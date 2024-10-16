@@ -1,6 +1,6 @@
 body {
     background: url('../../design/background.png') no-repeat center center fixed;
-    background-size: cover;
+    background-size: cover; 
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
@@ -68,6 +68,10 @@ h3 {
 body {
     font-size: 2em; /* Bigger body text */
 }
+.wrapper {
+    max-width: calc(100% - 400px); /* Ensure wrapper doesn't exceed the screen width */
+    margin: 0 auto;
+}
 
 .banner {
     display: flex;
@@ -97,16 +101,16 @@ body {
 
 .hero-banner.fortnite {
     background: url('../../banners/fortnite-banner.jpg') no-repeat center center;
-    background-size: cover;
-    color: #5FCEEA;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-size: cover; /* Ensure the image covers the entire banner */
+    border: 2px solid #ffffff; /* White outline */
+    border-radius: 15px; /* Rounded edges */
+    color: #FA9C1D;
+    height: 50vh; /* Smaller height */
     text-align: center;
     padding: 20px;
     margin-top: 60px;
+    margin-left: 170px; /* 150px for navbar width + 20px space */
+    margin-right: 20px;
 }
 
 .hero-banner.fortnite h1 {

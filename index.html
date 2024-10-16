@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="public/styles/homestyles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
+<body style="background-image: url('../../design/background.png');">
     <header>
         <div class="navbar">
             <ul>
@@ -17,30 +17,50 @@
                 <li><a href="/public/player-stats.html">Player Stats</a></li>
                 <!-- Add more links as needed -->
             </ul>
-            <button id="theme-toggle" onclick="toggleTheme()">Light Mode</button>
-        </div>
+            <button id="theme-toggle" onclick="toggleTheme()">
+                <img id="theme-icon" src="/design/light-mode.png" alt="Toggle Theme">
+            </button>
+            <div class="wrapper">
 
+                
+            </div>
+        </div>
     </header>
-   
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const button = document.getElementById("theme-toggle");
+            const icon = document.getElementById("theme-icon");
+        
+            if (localStorage.getItem('theme') === 'light-mode') {
+                body.classList.add('light-mode');
+                body.style.backgroundImage = "url('../../design/light-background.png')";
+                button.classList.add("light-mode");
+                icon.src = "/design/dark-mode.png";
+            }
+        
+            button.addEventListener('click', () => {
+                if (body.classList.contains('light-mode')) {
+                    body.style.backgroundImage = "url('../../design/background.png')";
+                    body.classList.remove("light-mode");
+                    button.classList.remove("light-mode");
+                    icon.src = "/design/light-mode.png";
+                    localStorage.setItem('theme', 'dark-mode');
+                } else {
+                    body.style.backgroundImage = "url('../../design/light-background.png')";
+                    body.classList.add("light-mode");
+                    button.classList.add("light-mode");
+                    icon.src = "/design/dark-mode.png";
+                    localStorage.setItem('theme', 'light-mode');
+                }
+            });
+        });
+        </script>
+        
+
     <footer>
         &copy; 2024 Battle Pass Countdown. All rights reserved.
     </footer>
-    <script>
-function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle("light-mode");
-
-    const button = document.getElementById("theme-toggle");
-    if (body.classList.contains("light-mode")) {
-        button.textContent = "Dark Mode";
-    } else {
-        button.textContent = "Light Mode";
-    }
-}
-</script>
-
-        
-        
-        
 </body>
 </html>

@@ -1,6 +1,6 @@
 body {
     background: url('../../design/background.png') no-repeat center center fixed;
-    background-size: cover;
+    background-size: cover; 
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;

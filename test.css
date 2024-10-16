@@ -1,112 +1,3 @@
-body {
-    background: url('../../design/background.png') no-repeat center center fixed;
-    background-size: cover; 
-    margin: 0;
-    padding: 0;
-    font-family: 'Oswald', sans-serif;
-}
-
-/* Normal Mode Navbar */
-.navbar {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 150px; 
-    height: 100vh; 
-    background: rgba(14, 14, 14, 0.7); 
-    backdrop-filter: blur(5px); 
-    color: #e0e0e0;
-    padding: 20px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
-
-/* Font face for BigNoodleTitling */
-@font-face {
-    font-family: 'BigNoodleTitling';
-    src: url('fonts/BigNoodleTitling.ttf') format('truetype');
-}
-
-body, h1, h2, h3, h4, h5, h6 {
-    font-family: 'BigNoodleTitling', sans-serif;
-}
-
-#theme-toggle {
-    position: absolute;
-    bottom: 35px;
-    left: 0px;
-    background: none; /* Remove white background */
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease;
-}
-
-#theme-toggle img {
-    width: 100%;
-    height: auto;
-    display: block; /* Ensures the image fills the button */
-}
-
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar li {
-    margin: 20px 0;
-}
-
-.navbar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.navbar a:hover {
-    color: #FA9C1D;
-}
-
-/* Adjust font sizes */
-h1 {
-    font-size: 3em; /* Bigger headers */
-}
-
-h2 {
-    font-size: 2.5em;
-}
-
-h3 {
-    font-size: 2em;
-}
-
-body {
-    font-size: 2em; /* Bigger body text */
-}
-
-.wrapper {
-    max-width: calc(100% - 400px); /* Ensure wrapper doesn't exceed the screen width */
-    margin-left: 170px;
-}
-
-.hero-banner.overwatch {
-    background: url('../../banners/overwatch-banner.jpg') no-repeat center center;
-    background-size: cover; /* Ensure the image covers the entire banner */
-    border: 5px solid #7c7c7c; /* White outline */
-    border-radius: 30px; /* Rounded edges */
-    color: #FA9C1D;
-    height: 50vh; /* Smaller height */
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-    margin-left: 170px; /* 150px for navbar width + 20px space */
-    margin-right: 20px;
-}
 
 .content {
     display: flex;
@@ -161,13 +52,6 @@ body {
     padding-left: 170px;
 }
 
-
-
-
-
-
-
-
 .group {
     background-color: #000;
     border: 5px solid #FA9C1D;
@@ -206,6 +90,42 @@ body {
     gap: 10px; /* Adjust spacing between heroes */
     justify-content: center; /* Center the hero icons */
 }
+
+.group.support-group {
+    border: 5px solid #FA9C1D;
+   
+    border-radius: 10px;
+    margin: 19px;
+    padding-left: 30px;
+}
+
+.group.support-group .hero-box {
+    
+    width: 120px;
+    height: 150px;
+    background-color: #FA9C1D;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(82, 82, 82, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.group.support-group .hero-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.group.support-group .hero-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+
 .modal {
     display: none;
     position: fixed;
