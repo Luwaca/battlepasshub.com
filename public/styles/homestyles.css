@@ -1,5 +1,5 @@
 body {
-    background: url('../../design/background.png') no-repeat center center fixed;
+    background: url('design/background.png') no-repeat center center fixed;
     background-size: cover; 
     margin: 0;
     padding: 0;
@@ -17,8 +17,8 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 #theme-toggle {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 35px;
+    left: 0px;
     background: none; /* Remove white background */
     border: none;
     cursor: pointer;
@@ -87,10 +87,6 @@ h3 {
 body {
     font-size: 2em; /* Bigger body text */
 }
-
-
-
-
 
 footer {
     text-align: center;

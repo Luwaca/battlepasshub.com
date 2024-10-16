@@ -7,23 +7,21 @@
     <link rel="stylesheet" href="public/styles/homestyles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body style="background-image: url('../../design/background.png');">
+<body style="background-image: url('design/background.png');">
     <header>
         <div class="navbar">
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="/public/overwatch.html">Overwatch</a></li>
-                <li><a href="/public/fortnite.html">Fortnite</a></li>
-                <li><a href="/public/player-stats.html">Player Stats</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="public/overwatch.html">Overwatch</a></li>
+                <li><a href="public/fortnite.html">Fortnite</a></li>
+                <li><a href="public/player-stats.html">Player Stats</a></li>
                 <!-- Add more links as needed -->
             </ul>
             <button id="theme-toggle" onclick="toggleTheme()">
-                <img id="theme-icon" src="/design/light-mode.png" alt="Toggle Theme">
+                <img id="theme-icon" src="design/dark-mode.png" alt="Toggle Theme">
             </button>
             <div class="wrapper">
-
-                
-            </div>
+          </div> 
         </div>
     </header>
 
@@ -33,33 +31,33 @@
             const button = document.getElementById("theme-toggle");
             const icon = document.getElementById("theme-icon");
         
+            // Load theme from localStorage
             if (localStorage.getItem('theme') === 'light-mode') {
                 body.classList.add('light-mode');
-                body.style.backgroundImage = "url('../../design/light-background.png')";
+                body.style.backgroundImage = "url('/design/background white.png')";
                 button.classList.add("light-mode");
-                icon.src = "/design/dark-mode.png";
+                icon.src = "design/dark-mode.png";
             }
         
+            // Toggle theme on button click
             button.addEventListener('click', () => {
                 if (body.classList.contains('light-mode')) {
-                    body.style.backgroundImage = "url('../../design/background.png')";
+                    body.style.backgroundImage = "url('/design/background.png')";
                     body.classList.remove("light-mode");
                     button.classList.remove("light-mode");
-                    icon.src = "/design/light-mode.png";
+                    icon.src = "design/light-mode.png";
                     localStorage.setItem('theme', 'dark-mode');
                 } else {
-                    body.style.backgroundImage = "url('../../design/light-background.png')";
+                    body.style.backgroundImage = "url('/design/background white.png')";
                     body.classList.add("light-mode");
                     button.classList.add("light-mode");
-                    icon.src = "/design/dark-mode.png";
+                    icon.src = "design/dark-mode.png";
                     localStorage.setItem('theme', 'light-mode');
                 }
             });
         });
         </script>
-        
-
-    <footer>
+        <footer>
         &copy; 2024 Battle Pass Countdown. All rights reserved.
     </footer>
 </body>

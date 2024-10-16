@@ -15,6 +15,25 @@ body {
 body, h1, h2, h3, h4, h5, h6 {
     font-family: 'BigNoodleTitling', sans-serif;
 }
+
+#theme-toggle {
+    position: absolute;
+    bottom: 35px;
+    left: 0px;
+    background: none; /* Remove white background */
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle img {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensures the image fills the button */
+}
 /* Navigation Bar */
 .navbar {
     position: fixed;
@@ -134,8 +153,8 @@ body {
 
 .countdown-box.fortnite,
 .patch-notes-box.fortnite {
-    background-color: #333;
-    color: #FFFFFF;
+    background-color: #000000;
+    color: #005c99;
     text-align: center;
     padding: 30px;
     border-radius: 10px;

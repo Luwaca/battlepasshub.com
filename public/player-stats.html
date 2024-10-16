@@ -19,10 +19,10 @@
                 <!-- Add more links as needed -->
             </ul>
             <button id="theme-toggle" onclick="toggleTheme()">
-                <img id="theme-icon" src="/design/light-mode.png" alt="Toggle Theme">
+                <img id="theme-icon" src="../design/light-mode.png" alt="Toggle Theme">
             </button>
-          </div> 
         </div>
+        
         <div class="wrapper">
         <div class="hero-banner player-stats"></div>
         <div class="search-bar">
@@ -35,7 +35,7 @@
                 <h2>Player Stats</h2>
                 <div id="stats-content">
                     <div class="player-info">
-                        <img src="/placeholder/empty profile pic.png" alt="Player Icon">
+                        <img src="../placeholder/empty profile pic.png" alt="Player Icon">
                         <p><strong>Username:</strong> <span id="username"></span></p>
                     </div>
                     <div class="categories">
@@ -109,33 +109,35 @@
     </footer>
     <script>
      document.addEventListener('DOMContentLoaded', () => {
-            const body = document.body;
-            const button = document.getElementById("theme-toggle");
-            const icon = document.getElementById("theme-icon");
-        
-            if (localStorage.getItem('theme') === 'light-mode') {
-                body.classList.add('light-mode');
-                body.style.backgroundImage = "url('../../design/light-background.png')";
-                button.classList.add("light-mode");
-                icon.src = "/design/dark-mode.png";
-            }
-        
-            button.addEventListener('click', () => {
-                if (body.classList.contains('light-mode')) {
-                    body.style.backgroundImage = "url('../../design/background.png')";
-                    body.classList.remove("light-mode");
-                    button.classList.remove("light-mode");
-                    icon.src = "/design/light-mode.png";
-                    localStorage.setItem('theme', 'dark-mode');
-                } else {
-                    body.style.backgroundImage = "url('../../design/light-background.png')";
-                    body.classList.add("light-mode");
-                    button.classList.add("light-mode");
-                    icon.src = "/design/dark-mode.png";
-                    localStorage.setItem('theme', 'light-mode');
-                }
-            });
-        });
+    const body = document.body;
+    const button = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+
+    // Load theme from localStorage
+    if (localStorage.getItem('theme') === 'light-mode') {
+        body.classList.add('light-mode');
+        body.style.backgroundImage = "url('../design/background white.png')";
+        button.classList.add("light-mode");
+        icon.src = "../design/dark-mode.png";
+    }
+
+    // Toggle theme on button click
+    button.addEventListener('click', () => {
+        if (body.classList.contains('light-mode')) {
+            body.style.backgroundImage = "url('../design/background.png')";
+            body.classList.remove("light-mode");
+            button.classList.remove("light-mode");
+            icon.src = "../design/light-mode.png";
+            localStorage.setItem('theme', 'dark-mode');
+        } else {
+            body.style.backgroundImage = "url('../design/background white.png')";
+            body.classList.add("light-mode");
+            button.classList.add("light-mode");
+            icon.src = "../design/dark-mode.png";
+            localStorage.setItem('theme', 'light-mode');
+        }
+    });
+});
         
         // Store recent searches in an array
         let recentSearches = [];
