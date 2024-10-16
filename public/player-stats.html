@@ -21,132 +21,86 @@
             <datalist id="suggestions"></datalist>
             <button onclick="searchStats()">Search</button>
         </div>
-    <div class="content">
-        <section class="stats-box">
-            <h2>Player Stats</h2>
-            <div id="stats-content">
-                <div class="player-info">
-                    <img src="/placeholder/empty profile pic.png" alt="Player Icon">
-                    <p><strong>Username:</strong> <span id="username"></span></p>
-                    <div class="endorsement">
-                        <p><strong></strong> <span id="endorsement"></span> <img src="/placeholder/endorcement.png" alt="Endorsement Icon" id="endorsement-icon"></p>
-                    </div>
-                </div>
-                
-                
-                
-                
-                
-                <div class="categories">
-                    <div class="section overall">
-                        <h3>Overall Stats</h3>
-                        <p><strong>Games Played:</strong> <span id="games-played-overall"></span></p>
-                        <p><strong>Games Won:</strong> <span id="games-won-overall"></span></p>
-                        <p><strong>Games Lost:</strong> <span id="games-lost-overall"></span></p>
-                    </div>
-                    <div class="section quickplay">
-                        <h3>Quickplay</h3>
-                        <p><strong>Games Played:</strong> <span id="games-played-quickplay"></span></p>
-                        <p><strong>Games Won:</strong> <span id="games-won-quickplay"></span></p>
-                    </div>
-                </div>
-                <div class="section competitive">
-                    <h3>Competitive</h3>
-                    <p><strong>Games Played:</strong> <span id="games-played-competitive"></span></p>
-                    <p><strong>Games Won:</strong> <span id="games-won-competitive"></span></p>
-                    
-                    <div class="role tank">
-                        <h4>TANK</h4>
-                        <div class="rating">
-                            <p><strong>Rank:</strong> <span id="rank-tank"></span> <img src="/placeholder/R.png" alt="Tank Rank Icon" id="rank-icon-tank"></p>
-                            <p><strong>Tier:</strong> <span id="tier-tank"></span> <img src="/placeholder/1.png" alt="Tier Icon" id="tier-icon-tank"></p>
+        <div class="content">
+            <section class="stats-box">
+                <h2>Player Stats</h2>
+                <div id="stats-content">
+                    <div class="player-info">
+                        <img src="/placeholder/empty profile pic.png" alt="Player Icon">
+                        <p><strong>Username:</strong> <span id="username"></span></p>
+                        <div class="endorsement">
+                            <p><strong>Endorsement Level:</strong> <span id="endorsement"></span> <img src="/placeholder/endorsement.png" alt="Endorsement Icon" id="endorsement-icon"></p>
                         </div>
                     </div>
-                    <div class="role dps">
-                        <h4>DPS</h4>
-                        <div class="rating">
-                            <p><strong>Rank:</strong> <span id="rank-dps"></span> <img src="/placeholder/R.png" alt="DPS Rank Icon" id="rank-icon-dps"></p>
-                            <p><strong>Tier:</strong> <span id="tier-dps"></span> <img src="/placeholder/1.png" alt="Tier Icon" id="tier-icon-dps"></p>
+                    <div class="categories">
+                        <div class="section overall">
+                            <h3>Overall Stats</h3>
+                            <p><strong>Games Played:</strong> <span id="games-played-overall"></span></p>
+                            <p><strong>Games Won:</strong> <span id="games-won-overall"></span></p>
+                            <p><strong>Games Lost:</strong> <span id="games-lost-overall"></span></p>
+                        </div>
+                        <div class="section quickplay">
+                            <h3>Quickplay</h3>
+                            <p><strong>Games Played:</strong> <span id="games-played-quickplay"></span></p>
+                            <p><strong>Games Won:</strong> <span id="games-won-quickplay"></span></p>
                         </div>
                     </div>
-                    <div class="role support">
-                        <h4>SUPPORT</h4>
-                        <div class="rating">
-                            <p><strong>Rank:</strong> <span id="rank-support"></span> <img src="/placeholder/R.png" alt="Support Rank Icon" id="rank-icon-support"></p>
-                            <p><strong>Tier:</strong> <span id="tier-support"></span> <img src="/placeholder/1.png" alt="Tier Icon" id="tier-icon-support"></p>
-                        </div>
+                    <div class="section competitive">
+                        <h3>Competitive</h3>
+                        <p><strong>Games Played:</strong> <span id="games-played-competitive"></span></p>
+                        <p><strong>Games Won:</strong> <span id="games-won-competitive"></span></p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
-    
     <footer>
         &copy; 2024 Battle Pass Countdown. All rights reserved.
     </footer>
     <script>
         // Store recent searches in an array
         let recentSearches = [];
-
         document.getElementById('search-input').addEventListener('keypress', function (event) {
             if (event.key === 'Enter') {
                 searchStats();
             }
         });
-
-        // Add recent searches to the dropdown
-        function updateRecentSearchesDropdown() {
-            const dataList = document.getElementById('suggestions');
-            dataList.innerHTML = '';
-            recentSearches.forEach(player => {
-                const option = document.createElement('option');
-                option.value = player;
-                dataList.appendChild(option);
-            });
+    
+        async function fetchStatsSummary(playerId) {
+            const response = await fetch(`https://overfast-api.tekrop.fr/players/${playerId}/stats/summary`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
         }
-
+    
         async function searchStats() {
-    let username = document.getElementById('search-input').value;
-    username = username.replace('#', '-'); // Replace # with -
-
-    // Add the username to the recent searches if it's not already there
-    if (!recentSearches.includes(username)) {
-        recentSearches.push(username);
-        updateRecentSearchesDropdown();
-    }
-
-    try {
-        const response = await fetch(`https://little-congruous-gatsby.glitch.me/api/overwatch/stats/${username}`);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+            let username = document.getElementById('search-input').value;
+            const playerId = username.replace('#', '-'); // Replace # with -
+            try {
+                const data = await fetchStatsSummary(playerId);
+                console.log('Fetched data:', data); // Log the fetched data
+    
+                // Display Overwatch Stats
+                const statsContent = document.getElementById('stats-content');
+                if (data) {
+                    document.getElementById('username').textContent = username;
+                    document.getElementById('games-played-overall').textContent = data.gamesPlayed || 'N/A';
+                    document.getElementById('games-won-overall').textContent = data.gamesWon || 'N/A';
+                    document.getElementById('games-lost-overall').textContent = data.gamesLost || 'N/A';
+                    document.getElementById('games-played-quickplay').textContent = data.quickplay.gamesPlayed || 'N/A';
+                    document.getElementById('games-won-quickplay').textContent = data.quickplay.gamesWon || 'N/A';
+                    document.getElementById('games-played-competitive').textContent = data.competitive.gamesPlayed || 'N/A';
+                    document.getElementById('games-won-competitive').textContent = data.competitive.gamesWon || 'N/A';
+                } else {
+                    statsContent.innerText = 'Private Account or No Data Found';
+                }
+            } catch (error) {
+                console.error('Error fetching stats:', error);
+                document.getElementById('stats-content').innerText = 'Private Account or Error Fetching Data';
+            }
         }
-        const data = await response.json();
-        console.log('Fetched data:', data); // Log the fetched data
-
-        // Update Player Info
-        document.getElementById('username').textContent = data.name || 'N/A';
-        document.getElementById('endorsement').textContent = data.endorsement || 'N/A';
-        document.getElementById('endorsement-icon').src = data.endorsementIcon || 'placeholder.png';
-        document.querySelector('.player-info img').src = data.icon || 'placeholder.png';
-
-        // Update Overall Stats
-        document.getElementById('games-played-overall').textContent = data.gamesPlayed || 'N/A';
-        document.getElementById('games-won-overall').textContent = data.gamesWon || 'N/A';
-        document.getElementById('games-lost-overall').textContent = data.gamesLost || 'N/A';
-
-        // Update Quickplay Stats
-        document.getElementById('games-played-quickplay').textContent = data.quickPlayStats.games.played || 'N/A';
-        document.getElementById('games-won-quickplay').textContent = data.quickPlayStats.games.won || 'N/A';
-
-        // Update Competitive Stats
-        document.getElementById('games-played-competitive').textContent = data.competitiveStats.games.played || 'N/A';
-        document.getElementById('games-won-competitive').textContent = data.competitiveStats.games.won || 'N/A';
-    } catch (error) {
-        console.error('Error fetching stats:', error);
-        document.getElementById('stats-content').innerText = 'Private Account';
-    }
-}
-
     </script>
-    </div>
+    
+</body>
 </html>
