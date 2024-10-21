@@ -54,41 +54,6 @@ body {
 }
 
 /* Navigation Bar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 150px; /* Adjust width as needed */
-    height: 100vh; /* Full height of the viewport */
-    background: rgba(14, 14, 14, 0.7); /* Semi-transparent background */
-    backdrop-filter: blur(5px); /* Optional: adds a blur effect to the background */
-    color: #e0e0e0;
-    padding: 20px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
-
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar li {
-    margin: 20px 0;
-}
-
-.navbar a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.navbar a:hover {
-    color: #FA9C1D;
-}
 
 
 /* Footer styling */

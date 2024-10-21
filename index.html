@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Battle Pass Countdown</title>
-    <link rel="stylesheet" href="public/styles/homestyles.css">
-    <link rel="stylesheet" href="/battlepasshub.com/from scratch/navbar.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/styles/homestyles.css">
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/Favicon.ico">
 </head>
-<body style="background-image: url('design/background.png');">
+<body style="background-image: url('assets/');">
     <header>
         <div class="nav-bar">
-            <img class="bp" src="assests/BP.png" alt="BP Logo" />
+            <img class="bp" src="assets/icons/BP.png" alt="BP Logo" />
             <a href="index.html">
                 <div class="home">
                     <div class="text-wrapper-3">HOME</div>
@@ -31,22 +31,19 @@
                     </div>
                 </div>
             </a>
-            <a href="public/player-stats.html">
+            <a href="Pages/player-stats.html">
                 <div class="stats">
                     <div class="text-wrapper">PLAYER STATS</div>
                 </div>
             </a>
             <div class="search-container">
                 <button id="search-button" class="search-button">
-                    <img src="assests/SearchBar.png" alt="Search">
+                    <img src="assets/icons/SearchBar.png" alt="Search">
                 </button>
                 <input type="text" id="search-input" class="search-input" placeholder="Search...">
             </div>
         </div>
-        <div class="wrapper">
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0DcEs8DKljbS0vK8LWakbF?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-
+       
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const body = document.body;
@@ -79,8 +76,6 @@
             });
         });
         </script>
-        <footer>
-        &copy; 2024 Battle Pass Countdown. All rights reserved.
-    </footer>
+    
 </body>
 </html>

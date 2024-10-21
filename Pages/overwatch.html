@@ -1,26 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Overwatch Battle Pass Countdown</title>
-    <link rel="stylesheet" href="styles/overwatch.css" />
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-  </head>
-  <body class="overwatch">
-    <div class="navbar">
-      <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="overwatch.html">Overwatch</a></li>
-          <li><a href="fortnite.html">Fortnite</a></li>
-          <li><a href="player-stats.html">Player Stats</a></li>
-          <!-- Add more links as needed -->
-      </ul>
-      <button id="theme-toggle" onclick="toggleTheme()">
-          <img id="theme-icon" src="../design/light-mode.png" alt="Toggle Theme">
-      </button>
-  </div>
-  </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Stats</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Protest+Strike:wght@400&display=swap">
+    <link rel="stylesheet" href="../assets/styles/navbar.css">
+    <link rel="stylesheet" href="../assets/styles/overwatch.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <img class="bp" src="../assets/icons/BP.png" alt="BP Logo" />
+        <a href="../index.html">
+            <div class="home">
+                <div class="text-wrapper-3">HOME</div>
+            </div>
+        </a>
+        <a href="../Pages/overwatch.html">
+            <div class="ow">
+                <div class="overlap">
+                    <div class="text-wrapper-2">OVERWATCH</div>
+                </div>
+            </div>
+        </a>
+        <a href="../Pages/fortnite.html">
+            <div class="fortnite">
+                <div class="overlap-group">
+                    <div class="div">FORTNITE</div>
+                </div>
+            </div>
+        </a>
+        <a href="../Pages/player-stats.html">
+            <div class="stats">
+                <div class="text-wrapper">PLAYER STATS</div>
+            </div>
+        </a>
+        <div class="search-container">
+            <button id="search-button" class="search-button">
+                <img src="../assets/icons/SearchBar.png" alt="Search">
+            </button>
+            <input type="text" id="search-input" class="search-input" placeholder="Search...">
+        </div>
+    </div>
     <div class="wrapper">
       <div class="hero-banner overwatch"></div>
       <div class="content">
