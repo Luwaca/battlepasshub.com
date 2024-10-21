@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Stats</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Protest+Strike:wght@400&display=swap">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="stats.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <img class="bp" src="assests/BP.png" alt="BP Logo" />
+        <a href="index.html">
+            <div class="home">
+                <div class="text-wrapper-3">HOME</div>
+            </div>
+        </a>
+        <a href="public/overwatch.html">
+            <div class="ow">
+                <div class="overlap">
+                    <div class="text-wrapper-2">OVERWATCH</div>
+                </div>
+            </div>
+        </a>
+        <a href="public/fortnite.html">
+            <div class="fortnite">
+                <div class="overlap-group">
+                    <div class="div">FORTNITE</div>
+                </div>
+            </div>
+        </a>
+        <a href="public/player-stats.html">
+            <div class="stats">
+                <div class="text-wrapper">PLAYER STATS</div>
+            </div>
+        </a>
+        <div class="search-container">
+            <button id="search-button" class="search-button">
+                <img src="assests/SearchBar.png" alt="Search">
+            </button>
+            <input type="text" id="search-input" class="search-input" placeholder="Search...">
+        </div>
+    </div>
+    <div class="wrapper">
+        <section class="player-stats-container">
+            <div class="player-stats-card">
+                <div class="player-info">
+                    <div class="player-avatar" role="img" aria-label="Player avatar">
+                        <img id="player-icon" alt=""/>
+                    </div>
+                    <span id="username" class="player-name">NAME</span>
+                </div>
+                <div class="additional-info">
+                    <img id="namecard" alt="">
+                    <div id="title"></div>
+                </div>
+                <div class="endorsement">
+                    <img id="endorsement-icon" alt="">
+                </div>
+                <div class="stats-details">
+                    <div class="stats-separator"></div>
+                    <div class="roles-stats">
+                        <div class="stats-content">
+                            <div class="stats-main">
+                                <div class="stats-data">
+                                    <div class="stats-list">
+                                        <div id="general-games-played" class="stats-item">PLAYED:</div>
+                                        <div id="general-games-won" class="stats-item">GAMES WON:</div>
+                                        <div id="general-games-lost" class="stats-item">GAMES LOST:</div>
+                                        <div id="general-time-played" class="stats-item-long">TIME PLAYED:</div>
+                                        <div id="general-winrate" class="stats-item">WIN RATE: %</div>
+                                        <div id="general-kda" class="stats-item">KDA:</div>
+                                    </div>
+                                    <div class="general-stats">
+                                        <div class="general-stats-title">GENERAL</div>
+                                        <div class="general-stats-list">
+                                            <div id="general-total-eliminations" class="general-stats-item">ELIMS:</div>
+                                            <div id="general-total-assists" class="general-stats-item">ASSISTS:</div>
+                                            <div id="general-total-deaths" class="general-stats-item">DEATHS:</div>
+                                            <div id="general-total-damage" class="general-stats-item">DAMAGE:</div>
+                                            <div id="general-total-healing" class="general-stats-item">HEALING:</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="role-icon" id="tank-button">
+                                <button>
+                                    <span class="role-name">TANK</span>
+                                    <img loading="lazy" src="assests/Arrow 1.png" class="role-icon-img" alt="Tank role icon"/>
+                                </button>
+                            </div>
+                            <div class="role-icon" id="supp-button">
+                                <button>
+                                    <span class="role-name">SUPP</span>
+                                    <img loading="lazy" src="assests/Arrow 2.png" class="role-icon-img" alt="Support role icon"/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+document.getElementById('search-button').addEventListener('click', () => {
+    const searchContainer = document.querySelector('.search-container');
+    searchContainer.classList.toggle('expanded');
+});
+
+// Store recent searches in an array
+let recentSearches = [];
+
+document.getElementById('search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        searchStats();
+    }
+});
+
+async function fetchStatsSummary(playerId) {
+    const response = await fetch(`https://overfast-api.tekrop.fr/players/${playerId}/stats/summary`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    console.log('Stats Summary Data:', data); // Log the fetched data
+    return data;
+}
+
+async function fetchSummary(playerId) {
+    const response = await fetch(`https://overfast-api.tekrop.fr/players/${playerId}`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    console.log('Summary Data:', data); // Log the fetched summary data
+    return data;
+}
+async function searchStats() {
+    let username = document.getElementById('search-input').value;
+    const playerId = username.replace('#', '-'); // Replace # with -
+
+    try {
+        const summaryData = await fetchSummary(playerId);
+        const statsData = await fetchStatsSummary(playerId); // Fetch stats summary data
+
+        console.log('Fetched summary data:', summaryData);
+        console.log('Fetched stats data:', statsData); // Log stats data
+
+        if (summaryData && statsData) {
+            // Update Player Info and replace the player card content
+            const playerCard = `
+                <div class="player-info">
+                    <div class="player-avatar" role="img" aria-label="Player avatar">
+                        <img id="player-icon" src="${summaryData.summary.avatar}" alt="Player icon"/>
+                    </div>
+                    <span class="player-name">${summaryData.summary.username}</span>
+                </div>
+                <div class="additional-info">
+                    <img id="namecard" src="${summaryData.summary.namecard}" alt="Player namecard">
+                    <div id="title">Title: ${summaryData.summary.title || 'N/A'}</div>
+                </div>
+                <div class="endorsement">
+                    <img id="endorsement-icon" src="${summaryData.summary.endorsement.frame}" alt="Endorsement icon">
+                </div>
+                <!-- More competitive stats can be added here if needed -->
+            `;
+            document.querySelector('.player-stats-card').innerHTML = playerCard;
+
+            // Update event listeners for role buttons
+            document.getElementById('tank-button').addEventListener('click', () => {
+                document.querySelector('.player-stats-title').innerText = 'TANK STATS';
+                updateStats('tank');
+            });
+            document.getElementById('supp-button').addEventListener('click', () => {
+                document.querySelector('.player-stats-title').innerText = 'SUPP STATS';
+                updateStats('supp');
+            });
+
+            // Continue updating other elements (e.g., general stats)
+        } else {
+            document.getElementById('stats-content').innerText = 'Private Account or No Data Found';
+        }
+    } catch (error) {
+        console.error('Error fetching summary or stats:', error);
+        document.getElementById('stats-content').innerText = 'Private Account or Error Fetching Data';
+    }
+}
+
+</script>
+</body>s
+</html>

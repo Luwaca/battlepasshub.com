@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: 'Protest Strike', sans-serif;
+    background: #15171A;
+}
+
+.nav-bar {
+    position: absolute;
+    width: 230px;
+    height: 1080px;
+    background-color: #090b0d;
+}
+
+.nav-bar .bp {
+    position: absolute;
+    width: 230px;
+    height: 77px;
+    top: 0;
+    left: 0;
+}
+
+.nav-bar .home,
+.nav-bar .ow,
+.nav-bar .fortnite,
+.nav-bar .stats {
+    position: absolute;
+    width: 230px;
+    height: 92px;
+    background-color: #272727;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center;
+}
+
+.nav-bar .home {
+    top: 77px;
+    box-shadow: inset 0px -5px 29px #6802d040;
+}
+
+.nav-bar .ow {
+    top: 169px;
+    box-shadow: inset 0px -5px 29px #d0500240;
+}
+
+.nav-bar .fortnite {
+    top: 260px;
+    box-shadow: inset 0px -5px 29px #00fff240;
+}
+
+.nav-bar .stats {
+    top: 351px;
+    box-shadow: inset 0px -5px 29px #5fff9b8a;
+}
+
+.nav-bar .text-wrapper,
+.nav-bar .text-wrapper-2,
+.nav-bar .text-wrapper-3,
+.nav-bar .div {
+    font-family: 'Protest Strike', Helvetica;
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+}
+
+.search-container {
+    position: absolute;
+    top: 10px;
+    right: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.search-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.search-input {
+    width: 0;
+    padding: 10px;
+    margin-left: 1px;
+    border: none;
+    border-radius: 5px;
+    background: #2E2E2E;
+    color: #FFF;
+    font-size: 16px;
+    opacity: 0;
+    transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Expanded State */
+.search-container.expanded .search-input {
+    width: 150px;
+    opacity: 1;
+}

@@ -5,25 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Battle Pass Countdown</title>
     <link rel="stylesheet" href="public/styles/homestyles.css">
+    <link rel="stylesheet" href="/battlepasshub.com/from scratch/navbar.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body style="background-image: url('design/background.png');">
     <header>
-        <div class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="public/overwatch.html">Overwatch</a></li>
-                <li><a href="public/fortnite.html">Fortnite</a></li>
-                <li><a href="public/player-stats.html">Player Stats</a></li>
-                <!-- Add more links as needed -->
-            </ul>
-            <button id="theme-toggle" onclick="toggleTheme()">
-                <img id="theme-icon" src="design/dark-mode.png" alt="Toggle Theme">
-            </button>
-            <div class="wrapper">
-          </div> 
+        <div class="nav-bar">
+            <img class="bp" src="assests/BP.png" alt="BP Logo" />
+            <a href="index.html">
+                <div class="home">
+                    <div class="text-wrapper-3">HOME</div>
+                </div>
+            </a>
+            <a href="public/overwatch.html">
+                <div class="ow">
+                    <div class="overlap">
+                        <div class="text-wrapper-2">OVERWATCH</div>
+                    </div>
+                </div>
+            </a>
+            <a href="public/fortnite.html">
+                <div class="fortnite">
+                    <div class="overlap-group">
+                        <div class="div">FORTNITE</div>
+                    </div>
+                </div>
+            </a>
+            <a href="public/player-stats.html">
+                <div class="stats">
+                    <div class="text-wrapper">PLAYER STATS</div>
+                </div>
+            </a>
+            <div class="search-container">
+                <button id="search-button" class="search-button">
+                    <img src="assests/SearchBar.png" alt="Search">
+                </button>
+                <input type="text" id="search-input" class="search-input" placeholder="Search...">
+            </div>
         </div>
-    </header>
+        <div class="wrapper">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0DcEs8DKljbS0vK8LWakbF?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
