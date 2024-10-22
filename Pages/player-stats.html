@@ -1,214 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Stats</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Protest+Strike:wght@400&display=swap">
     <link rel="stylesheet" href="../assets/styles/navbar.css">
     <link rel="stylesheet" href="../assets/styles/stats.css">
-</head>
-<body>
+  </head>
+  <body>
     <div class="nav-bar">
-        <img class="bp" src="../assets/icons/BP.png" alt="BP Logo" />
-        <a href="../index.html">
-            <div class="home">
-                <div class="text-wrapper-3">HOME</div>
-            </div>
-        </a>
-        <a href="../Pages/overwatch.html">
-            <div class="ow">
-                <div class="overlap">
-                    <div class="text-wrapper-2">OVERWATCH</div>
-                </div>
-            </div>
-        </a>
-        <a href="../Pages/fortnite.html">
-            <div class="fortnite">
-                <div class="overlap-group">
-                    <div class="div">FORTNITE</div>
-                </div>
-            </div>
-        </a>
-        <a href="../Pages/player-stats.html">
-            <div class="stats">
-                <div class="text-wrapper">PLAYER STATS</div>
-            </div>
-        </a>
-        <div class="search-container">
-            <button id="search-button" class="search-button">
-                <img src="../assets/icons/SearchBar.png" alt="Search">
-            </button>
-            <input type="text" id="search-input" class="search-input" placeholder="Search...">
+      <img class="bp" src="../assets/icons/BP.png" alt="BP Logo" />
+      <a href="../index.html">
+        <div class="home">
+          <div class="text-wrapper-3">HOME</div>
         </div>
+      </a>
+      <a href="../Pages/overwatch.html">
+        <div class="ow">
+          <div class="overlap">
+            <div class="text-wrapper-2">OVERWATCH</div>
+          </div>
+        </div>
+      </a>
+      <a href="../Pages/fortnite.html">
+        <div class="fortnite">
+          <div class="overlap-group">
+            <div class="div">FORTNITE</div>
+          </div>
+        </div>
+      </a>
+      <a href="../Pages/player-stats.html">
+        <div class="stats">
+          <div class="text-wrapper">PLAYER STATS</div>
+        </div>
+      </a>
+      <div class="search-container">
+        <button id="search-button" class="search-button">
+          <img src="../assets/icons/SearchBar.png" alt="Search">
+        </button>
+        <input type="text" id="search-input" class="search-input" placeholder="Search...">
+      </div>
     </div>
     <div class="wrapper">
-        <section class="player-stats-container">
-            <div class="player-stats-card">
-                <!-- Player Info -->
-                <div class="player-info">
-                    <div class="player-avatar" role="img" aria-label="Player avatar">
-                        <img id="player-icon" src="../assets/icons/placeholder avatar.png" alt="?"/>
-                    </div>
-                    <span id="username" class="player-name">NAME</span>
-                </div>
-                <div class="namecard">
-                    <img id="namecard" src="../assets/icons/playercard.png" alt="?">
-                </div>
-                <div class="title">
-                    <span id="title"></span>
-                </div>
-                <div class="endorsement">
-                    <img id="endorsement-icon" src="../assets/icons/endorsement.png" alt="?">
-                </div>
-                <!-- Stats Details -->
-                <div class="stats-details">
-                    <div class="stats-separator"></div>
-                    <div class="roles-stats">
-                        <div class="stats-content">
-                            <div class="stats-main">
-                                <div class="stats-data">
-                                    <div class="stats-list">
-                                        <div id="general-games-played" class="stats-item">PLAYED: N/A</div>
-                                        <div id="general-games-won" class="stats-item">GAMES WON: N/A</div>
-                                        <div id="general-games-lost" class="stats-item">GAMES LOST: N/A</div>
-                                        <div id="general-time-played" class="stats-item-long">TIME PLAYED: N/A</div>
-                                        <div id="general-winrate" class="stats-item">WIN RATE: N/A</div>
-                                        <div id="general-kda" class="stats-item">KDA: N/A</div>
-                                    </div>
-                                    <div class="general-stats">
-                                        <div class="general-stats-title">GENERAL</div>
-                                        <div class="general-stats-list">
-                                            <div id="general-total-eliminations" class="general-stats-item">ELIMS: N/A</div>
-                                            <div id="general-total-assists" class="general-stats-item">ASSISTS: N/A</div>
-                                            <div id="general-total-deaths" class="general-stats-item">DEATHS: N/A</div>
-                                            <div id="general-total-damage" class="general-stats-item">DAMAGE: N/A</div>
-                                            <div id="general-total-healing" class="general-stats-item">HEALING: N/A</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="role-icon" id="tank-button">
-                                <button>
-                                    <span class="role-name">TANK</span>
-                                    <img loading="lazy" src="assests/Arrow 1.png" class="role-icon-img" alt="Tank role icon"/>
-                                </button>
-                            </div>
-                            <div class="role-icon" id="supp-button">
-                                <button>
-                                    <span class="role-name">SUPP</span>
-                                    <img loading="lazy" src="assests/Arrow 2.png" class="role-icon-img" alt="Support role icon"/>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <section class="player-stats-container">
+        <div class="player-stats-card">
+          <!-- Player Info -->
+          <div class="player-info">
+            <div class="player-avatar" role="img" aria-label="Player avatar">
+              <img id="player-icon" src="../assets/icons/placeholder avatar.png" alt="?" />
             </div>
-            
-                    
-                            <div class="role-icon" id="tank-button">
-                                <button>
-                                    <span class="role-name">TANK</span>
-                                    <img loading="lazy" src="../assets/icons/Arrow 1.png" class="role-icon-img" alt="Tank role icon"/>
-                                </button>
-                            </div>
-                            <div class="role-icon" id="supp-button">
-                                <button>
-                                    <span class="role-name">SUPP</span>
-                                    <img loading="lazy" src="../assets/icons/Arrow 2.png" class="role-icon-img" alt="Support role icon"/>
-                                </button>
-                            </div>
-                        </div>
+            <span id="username" class="player-name">NAME</span>
+          </div>
+          <div class="namecard">
+            <img id="namecard" src="../assets/icons/playercard.png" alt="?">
+          </div>
+          <div class="title">
+            <span id="title"></span>
+          </div>
+          <div class="endorsement">
+            <img id="endorsement-icon" src="../assets/icons/endorsement.png" alt="?">
+          </div>
+          <!-- Stats Details -->
+          <div class="stats-details">
+            <div class="stats-separator"></div>
+            <div class="roles-stats">
+              <div class="stats-content">
+                <div class="stats-main">
+                  <div class="stats-data">
+                    <div class="stats-list">
+                      <div id="general-games-played" class="stats-item">PLAYED: N/A</div>
+                      <div id="general-games-won" class="stats-item">GAMES WON: N/A</div>
+                      <div id="general-games-lost" class="stats-item">GAMES LOST: N/A</div>
+                      <div id="general-time-played" class="stats-item-long">TIME PLAYED: N/A</div>
+                      <div id="general-winrate" class="stats-item">WIN RATE: N/A</div>
+                      <div id="general-kda" class="stats-item">KDA: N/A</div>
                     </div>
+                    <div class="general-stats">
+                      <div class="general-stats-title">GENERAL</div>
+                      <div class="general-stats-list">
+                        <div id="general-total-eliminations" class="general-stats-item">ELIMS: N/A</div>
+                        <div id="general-total-assists" class="general-stats-item">ASSISTS: N/A</div>
+                        <div id="general-total-deaths" class="general-stats-item">DEATHS: N/A</div>
+                        <div id="general-total-damage" class="general-stats-item">DAMAGE: N/A</div>
+                        <div id="general-total-healing" class="general-stats-item">HEALING: N/A</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
+            <div class="roles-tank">
+              <div class="tank-content">
+                <div class="tank-main">
+                  <div class="tank-data">
+                    <div class="tank-list">
+                      <div id="tank-games-played" class="tank-item">PLAYED: N/A</div>
+                      <div id="tank-games-won" class="tank-item">GAMES WON: N/A</div>
+                      <div id="tank-games-lost" class="tank-item">GAMES LOST: N/A</div>
+                      <div id="tank-time-played" class="tank-item-long">TIME PLAYED: N/A</div>
+                      <div id="tank-winrate" class="tank-item">WIN RATE: N/A</div>
+                      <div id="tank-kda" class="tank-item">KDA: N/A</div>
+                    </div>
+                    <div class="tank-tank">
+                      <div class="tank-tank-title">TANK</div>
+                      <div class="tank-tank-list">
+                        <div id="tank-total-eliminations" class="tank-tank-item">ELIMS: N/A</div>
+                        <div id="tank-total-assists" class="tank-tank-item">ASSISTS: N/A</div>
+                        <div id="tank-total-deaths" class="tank-tank-item">DEATHS: N/A</div>
+                        <div id="tank-total-damage" class="tank-tank-item">DAMAGE: N/A</div>
+                        <div id="tank-total-healing" class="tank-tank-item">HEALING: N/A</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- damage Stats -->
+            <div class="roles-damage">
+              <div class="damage-content">
+                <div class="damage-main">
+                  <div class="damage-data">
+                    <div class="damage-list">
+                      <div id="damage-games-played" class="damage-item">PLAYED: N/A</div>
+                      <div id="damage-games-won" class="damage-item">GAMES WON: N/A</div>
+                      <div id="damage-games-lost" class="damage-item">GAMES LOST: N/A</div>
+                      <div id="damage-time-played" class="damage-item-long">TIME PLAYED: N/A</div>
+                      <div id="damage-winrate" class="damage-item">WIN RATE: N/A</div>
+                      <div id="damage-kda" class="damage-item">KDA: N/A</div>
+                    </div>
+                    <div class="damage-damage">
+                      <div class="damage-damage-title">DPS</div>
+                      <div class="damage-damage-list">
+                        <div id="damage-total-eliminations" class="damage-damage-item">ELIMS: N/A</div>
+                        <div id="damage-total-assists" class="damage-damage-item">ASSISTS: N/A</div>
+                        <div id="damage-total-deaths" class="damage-damage-item">DEATHS: N/A</div>
+                        <div id="damage-total-damage" class="damage-damage-item">DAMAGE: N/A</div>
+                        <div id="damage-total-healing" class="damage-damage-item">HEALING: N/A</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="roles-support">
+              <div class="support-content">
+                <div class="support-main">
+                  <div class="support-data">
+                    <div class="support-list">
+                      <div id="support-games-played" class="support-item">PLAYED: N/A</div>
+                      <div id="support-games-won" class="support-item">GAMES WON: N/A</div>
+                      <div id="support-games-lost" class="support-item">GAMES LOST: N/A</div>
+                      <div id="support-time-played" class="support-item-long">TIME PLAYED: N/A</div>
+                      <div id="support-winrate" class="support-item">WIN RATE: N/A</div>
+                      <div id="support-kda" class="support-item">KDA: N/A</div>
+                    </div>
+                    <div class="support-support">
+                      <div class="support-support-title">SUPP</div>
+                      <div class="support-support-list">
+                        <div id="support-total-eliminations" class="support-support-item">ELIMS: N/A</div>
+                        <div id="support-total-assists" class="support-support-item">ASSISTS: N/A</div>
+                        <div id="support-total-deaths" class="support-support-item">DEATHS: N/A</div>
+                        <div id="support-total-damage" class="support-support-item">DAMAGE: N/A</div>
+                        <div id="support-total-healing" class="support-support-item">HEALING: N/A</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    
     <script>
-document.getElementById('search-button').addEventListener('click', () => {
-    const searchContainer = document.querySelector('.search-container');
-    searchContainer.classList.toggle('expanded');
-});
-
-// Store recent searches in an array
-let recentSearches = [];
-
-document.getElementById('search-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        searchStats();
-    }
-});
-
-async function fetchStatsSummary(playerId) {
-    const response = await fetch(`https://overfast-api.tekrop.fr/players/${playerId}/stats/summary`);
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    const data = await response.json();
-    console.log('Stats Summary Data:', data); // Log the fetched data
-    return data;
-}
-
-
-async function fetchSummary(playerId) {
-    const response = await fetch(`https://overfast-api.tekrop.fr/players/${playerId}`);
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    const data = await response.json();
-    console.log('Summary Data:', data); // Log the fetched summary data
-    return data;
-}
-async function searchStats() {
-    let username = document.getElementById('search-input').value;
-    const playerId = username.replace('#', '-'); // Replace # with -
-
-    try {
-        const summaryData = await fetchSummary(playerId);
-        const statsData = await fetchStatsSummary(playerId); // Fetch stats summary data
-
-        console.log('Fetched summary data:', summaryData);
-        console.log('Fetched stats data:', statsData); // Log stats data
-
-        if (summaryData && statsData) {
+      document.getElementById('search-button').addEventListener('click', () => {
+        const searchContainer = document.querySelector('.search-container');
+        searchContainer.classList.toggle('expanded');
+      });
+      // Store recent searches in an array
+      let recentSearches = [];
+      document.getElementById('search-input').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+          searchStats();
+        }
+      });
+      async function fetchStatsSummary(playerId) {
+        const response = await fetch(`https://overfast-api.tekrop.fr/players/${playerId}/stats/summary`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log('Stats Summary Data:', data); // Log the fetched data
+        return data;
+      }
+      async function fetchSummary(playerId) {
+        const response = await fetch(`https://overfast-api.tekrop.fr/players/${playerId}`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log('Summary Data:', data); // Log the fetched summary data
+        return data;
+      }
+      async function searchStats() {
+        let username = document.getElementById('search-input').value;
+        const playerId = username.replace('#', '-'); // Replace # with -
+        try {
+          const summaryData = await fetchSummary(playerId);
+          const statsData = await fetchStatsSummary(playerId); // Fetch stats summary data
+          console.log('Fetched summary data:', summaryData);
+          console.log('Fetched stats data:', statsData); // Log stats data
+          if (summaryData && statsData) {
             // Update Player Info
             document.getElementById('username').textContent = summaryData.summary.username;
             document.getElementById('player-icon').src = summaryData.summary.avatar || 'default-icon-url';
             document.getElementById('namecard').src = summaryData.summary.namecard || 'default-namecard-url';
             document.getElementById('title').textContent = 'Title: ' + (summaryData.summary.title || 'N/A');
             document.getElementById('endorsement-icon').src = summaryData.summary.endorsement.frame || 'default-endorsement-icon-url';
-
+            // Log before updating stats
+            console.log('Updating stats with data:', statsData);
             // Update stats with the fetched data
             updateStats(statsData);
-        } else {
-            document.getElementById('stats-content').innerText = 'Private Account or No Data Found';
+          } else {
+            console.log('Private Account or No Data Found');
+          }
+        } catch (error) {
+          console.error('Error fetching summary or stats:', error);
         }
-    } catch (error) {
-        console.error('Error fetching summary or stats:', error);
-        document.getElementById('stats-content').innerText = 'Private Account or Error Fetching Data';
-    }
-}
+      }
 
-
-            function updateStats(statsData) {
-    // Log the stats data
-    console.log('Updating stats with data:', statsData);
-
-    // Update General Stats
-    document.getElementById('general-games-played').textContent = `PLAYED: ${statsData.general.games_played || 'N/A'}`;
-    document.getElementById('general-games-won').textContent = `GAMES WON: ${statsData.general.games_won || 'N/A'}`;
-    document.getElementById('general-games-lost').textContent = `GAMES LOST: ${statsData.general.games_lost || 'N/A'}`;
-    document.getElementById('general-time-played').textContent = `TIME PLAYED: ${(statsData.general.time_played / 3600).toFixed(2) || 'N/A'} hrs`; // Convert seconds to hours
-    document.getElementById('general-winrate').textContent = `WIN RATE: ${statsData.general.winrate || 'N/A'}`;
-    document.getElementById('general-kda').textContent = `KDA: ${statsData.general.kda || 'N/A'}`;
-    document.getElementById('general-total-eliminations').textContent = `ELIMS: ${statsData.general.total.eliminations || 'N/A'}`;
-    document.getElementById('general-total-assists').textContent = `ASSISTS: ${statsData.general.total.assists || 'N/A'}`;
-    document.getElementById('general-total-deaths').textContent = `DEATHS: ${statsData.general.total.deaths || 'N/A'}`;
-    document.getElementById('general-total-damage').textContent = `DAMAGE: ${statsData.general.total.damage || 'N/A'}`;
-    document.getElementById('general-total-healing').textContent = `HEALING: ${statsData.general.total.healing || 'N/A'}`;
-            }
-
-</script>
-</body>s
+      function updateStats(statsData) {
+        // Log the stats data
+        console.log('Updating stats with data:', statsData);
+        // Update General Stats
+        console.log(document.getElementById('general-games-played')); // Check if this element exists
+        document.getElementById('general-games-played').textContent = `PLAYED: ${statsData.general.games_played || 'N/A'}`;
+        console.log('General Games Played updated');
+        document.getElementById('general-games-won').textContent = `GAMES WON: ${statsData.general.games_won || 'N/A'}`;
+        document.getElementById('general-games-lost').textContent = `GAMES LOST: ${statsData.general.games_lost || 'N/A'}`;
+        document.getElementById('general-time-played').textContent = `TIME PLAYED: ${(statsData.general.time_played / 3600).toFixed(2) || 'N/A'} hrs`;
+        document.getElementById('general-winrate').textContent = `WIN RATE: ${statsData.general.winrate || 'N/A'}`;
+        document.getElementById('general-kda').textContent = `KDA: ${statsData.general.kda || 'N/A'}`;
+        document.getElementById('general-total-eliminations').textContent = `ELIMS: ${statsData.general.total.eliminations || 'N/A'}`;
+        document.getElementById('general-total-assists').textContent = `ASSISTS: ${statsData.general.total.assists || 'N/A'}`;
+        document.getElementById('general-total-deaths').textContent = `DEATHS: ${statsData.general.total.deaths || 'N/A'}`;
+        document.getElementById('general-total-damage').textContent = `DAMAGE: ${statsData.general.total.damage || 'N/A'}`;
+        document.getElementById('general-total-healing').textContent = `HEALING: ${statsData.general.total.healing || 'N/A'}`;
+        // Update tank Stats
+        document.getElementById('tank-games-played').textContent = `PLAYED: ${statsData.roles.tank.games_played || 'N/A'}`;
+        document.getElementById('tank-games-won').textContent = `GAMES WON: ${statsData.roles.tank.games_won || 'N/A'}`;
+        document.getElementById('tank-games-lost').textContent = `GAMES LOST: ${statsData.roles.tank.games_lost || 'N/A'}`;
+        document.getElementById('tank-time-played').textContent = `TIME PLAYED: ${(statsData.roles.tank.time_played / 3600).toFixed(2) || 'N/A'} hrs`;
+        document.getElementById('tank-winrate').textContent = `WIN RATE: ${statsData.roles.tank.winrate || 'N/A'}`;
+        document.getElementById('tank-kda').textContent = `KDA: ${statsData.roles.tank.kda || 'N/A'}`;
+        document.getElementById('tank-total-eliminations').textContent = `ELIMS: ${statsData.roles.tank.total.eliminations || 'N/A'}`;
+        document.getElementById('tank-total-assists').textContent = `ASSISTS: ${statsData.roles.tank.total.assists || 'N/A'}`;
+        document.getElementById('tank-total-deaths').textContent = `DEATHS: ${statsData.roles.tank.total.deaths || 'N/A'}`;
+        document.getElementById('tank-total-damage').textContent = `DAMAGE: ${statsData.roles.tank.total.damage || 'N/A'}`;
+        document.getElementById('tank-total-healing').textContent = `HEALING: ${statsData.roles.tank.total.healing || 'N/A'}`;
+        // Update Damage Stats
+        document.getElementById('damage-games-played').textContent = `PLAYED: ${statsData.roles.damage.games_played || 'N/A'}`;
+        document.getElementById('damage-games-won').textContent = `GAMES WON: ${statsData.roles.damage.games_won || 'N/A'}`;
+        document.getElementById('damage-games-lost').textContent = `GAMES LOST: ${statsData.roles.damage.games_lost || 'N/A'}`;
+        document.getElementById('damage-time-played').textContent = `TIME PLAYED: ${(statsData.roles.damage.time_played / 3600).toFixed(2) || 'N/A'} hrs`;
+        document.getElementById('damage-winrate').textContent = `WIN RATE: ${statsData.roles.damage.winrate || 'N/A'}`;
+        document.getElementById('damage-kda').textContent = `KDA: ${statsData.roles.damage.kda || 'N/A'}`;
+        document.getElementById('damage-total-eliminations').textContent = `ELIMS: ${statsData.roles.damage.total.eliminations || 'N/A'}`;
+        document.getElementById('damage-total-assists').textContent = `ASSISTS: ${statsData.roles.damage.total.assists || 'N/A'}`;
+        document.getElementById('damage-total-deaths').textContent = `DEATHS: ${statsData.roles.damage.total.deaths || 'N/A'}`;
+        document.getElementById('damage-total-damage').textContent = `DAMAGE: ${statsData.roles.damage.total.damage || 'N/A'}`;
+        document.getElementById('damage-total-healing').textContent = `HEALING: ${statsData.roles.damage.total.healing || 'N/A'}`;
+        // Update Support Stats
+        document.getElementById('support-games-played').textContent = `PLAYED: ${statsData.roles.support.games_played || 'N/A'}`;
+        document.getElementById('support-games-won').textContent = `GAMES WON: ${statsData.roles.support.games_won || 'N/A'}`;
+        document.getElementById('support-games-lost').textContent = `GAMES LOST: ${statsData.roles.support.games_lost || 'N/A'}`;
+        document.getElementById('support-time-played').textContent = `TIME PLAYED: ${(statsData.roles.support.time_played / 3600).toFixed(2) || 'N/A'} hrs`;
+        document.getElementById('support-winrate').textContent = `WIN RATE: ${statsData.roles.support.winrate || 'N/A'}`;
+        document.getElementById('support-kda').textContent = `KDA: ${statsData.roles.support.kda || 'N/A'}`;
+        document.getElementById('support-total-eliminations').textContent = `ELIMS: ${statsData.roles.support.total.eliminations || 'N/A'}`;
+        document.getElementById('support-total-assists').textContent = `ASSISTS: ${statsData.roles.support.total.assists || 'N/A'}`;
+        document.getElementById('support-total-deaths').textContent = `DEATHS: ${statsData.roles.support.total.deaths || 'N/A'}`;
+        document.getElementById('support-total-damage').textContent = `DAMAGE: ${statsData.roles.support.total.damage || 'N/A'}`;
+        document.getElementById('support-total-healing').textContent = `HEALING: ${statsData.roles.support.total.healing || 'N/A'}`;
+      }
+    </script>
+  </body>
 </html>
