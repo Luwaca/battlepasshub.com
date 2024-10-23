@@ -185,7 +185,7 @@ body {
     position: absolute;
     text-align: center;
     padding: 20px;
-    background-color: #2C2F33;
+    background-color: #006eff;
     color: #FFF;
 }
 
@@ -197,7 +197,7 @@ body {
 }
 
 .item {
-    background-color: #23272A;
+    background-color: #141414;
     border-radius: 10px;
     padding: 20px;
     width: 200px;
@@ -222,5 +222,5 @@ body {
 
 .item p:nth-child(4) { /* Price */
     font-weight: bold;
-    color: #FFD700; /* Golden color for price */
+    color: #00ff0d; /* Golden color for price */
 }
