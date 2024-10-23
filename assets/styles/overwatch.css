@@ -1,5 +1,5 @@
 body {
-    background: url('/design/background.png') no-repeat center center fixed;
+    background: color #7c7c7c;
     background-size: cover; 
     margin: 0;
     padding: 0;
@@ -33,27 +33,6 @@ body {
     font-size: 2em; /* Bigger body text */
 }
 
-/* Theme toggle button */
-#theme-toggle {
-    position: absolute;
-    bottom: 35px;
-    left: 0;
-    background: none; /* Remove white background */
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease;
-}
-
-#theme-toggle img {
-    width: 100%;
-    height: auto;
-    display: block; /* Ensures the image fills the button */
-}
-
-/* Navigation Bar */
 
 
 /* Footer styling */
@@ -110,7 +89,7 @@ footer:not(:hover) {
 }
 
 .hero-banner.overwatch {
-    background: url('../../banners/overwatch-banner.jpg') no-repeat center center;
+    background: url('../banners/overwatch-banner.jpg') no-repeat center center;
     background-size: cover; /* Ensure the image covers the entire banner */
     border: 5px solid #7c7c7c; /* White outline */
     border-radius: 30px; /* Rounded edges */
