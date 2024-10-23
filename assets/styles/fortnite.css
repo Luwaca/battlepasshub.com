@@ -1,9 +1,10 @@
 body {
-    background: url('../../design/background.png') no-repeat center center fixed;
+    background: color #7c7c7c;
     background-size: cover; 
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
+    font-size: 2em; /* Bigger body text */
 }
 
 /* Font face for BigNoodleTitling */
@@ -119,7 +120,7 @@ body {
 }
 
 .hero-banner.fortnite {
-    background: url('../../banners/fortnite-banner.jpg') no-repeat center center;
+    background: url('../banners/fortnite-banner.jpg') no-repeat center center;
     background-size: cover; /* Ensure the image covers the entire banner */
     border: 2px solid #ffffff; /* White outline */
     border-radius: 15px; /* Rounded edges */

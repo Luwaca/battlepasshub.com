@@ -10,7 +10,7 @@ body {
 /* Font face for BigNoodleTitling */
 @font-face {
     font-family: 'BigNoodleTitling';
-    src: url('fonts/BigNoodleTitling.ttf') format('truetype');
+    src: url('../fonts/big_noodle_titling.ttf') format('truetype');
 }
 
 body, h1, h2, h3, h4, h5, h6 {
