@@ -1,0 +1,117 @@
+<style>
+.game-stats-container {
+  background-color: rgba(10, 11, 14, 1);
+  display: flex;
+  max-width: 956px;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  font-family: Protest Strike, sans-serif;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  padding: 11px 70px 43px;
+}
+
+.stats-wrapper {
+  display: flex;
+  width: 329px;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.basic-stats {
+  align-self: end;
+  display: flex;
+  margin-top: 60px;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.games-played {
+  align-self: end;
+}
+
+.games-won {
+  margin-top: 12px;
+}
+
+.games-lost {
+  margin-top: 23px;
+}
+
+.time-played {
+  font-size: 19px;
+  margin-top: 23px;
+}
+
+.win-rate {
+  margin-top: 24px;
+}
+
+.kda-stat {
+  align-self: center;
+  margin-top: 23px;
+}
+
+.general-stats {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.role-title {
+  font-size: 36px;
+}
+
+.detailed-stats {
+  align-self: end;
+  display: flex;
+  margin-top: 32px;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.eliminations {
+  align-self: center;
+}
+
+.assists {
+  margin-top: 23px;
+}
+
+.deaths {
+  align-self: center;
+  margin-top: 23px;
+}
+
+.damage {
+  margin-top: 23px;
+}
+
+.healing {
+  margin-top: 22px;
+}
+
+@media (max-width: 991px) {
+  .game-stats-container {
+    padding: 0 20px;
+  }
+  
+  .basic-stats {
+    margin-top: 40px;
+  }
+  
+  .games-won,
+  .games-lost,
+  .time-played {
+    margin-right: 2px;
+  }
+  
+  .general-stats,
+  .detailed-stats {
+    white-space: initial;
+  }
+}
+</style>
