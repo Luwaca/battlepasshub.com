@@ -3,6 +3,7 @@ body {
     background-position-x: 100%;
     background-position-y: 60%;
     background-size: cover;
+    background-repeat: no-repeat;
     background-color: #006eff;
   
 }

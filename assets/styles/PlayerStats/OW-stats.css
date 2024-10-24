@@ -1,3 +1,11 @@
+body{
+    background-image: url(../../background/OW-stats.jpg);
+    margin: 0;
+  background-size: 90%;
+  background-position-x: 200px;
+  
+}
+
 .stats-section {
    
     width: 980px;
@@ -23,7 +31,7 @@
 .player-stats-card {
     position: relative; /* Ensure it's relative to place the avatar inside */
     border-radius: 39px;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     width: 100%; /* Adjusted for responsiveness */
@@ -90,22 +98,17 @@ height: 94px;
     left: 500px;
 }
 .stats-details {
-    background-color: #24262A;
+    background-color: rgba(0, 0, 0, 0.74);
     display: flex;
     width: 100%;
     flex-direction: column;
     padding: 48px 0 14px;
 }
 
-.stats-separator {
-    background-color: #0A0B0E;
-    display: flex;
-    min-height: 50px;
-    width: 100%;
-}
+
 
 .roles-stats {
-    background-color: #367a50;
+    background-color:  rgba(18, 240, 10, 0.336);
     overflow: hidden;
     margin: 10px 15px 0 11px;
     padding: 50px 23px 43px 20px;
@@ -286,20 +289,20 @@ height: 94px;
 
 }
 .roles-tank {
-    background-color: #a8561e;
+    background-color: rgba(240, 121, 10, 0.336);
     overflow: hidden;
     margin: 10px 15px 0 11px;
     padding: 50px 23px 43px 20px;
 }
 .roles-damage{
-    background-color: #751abe;
+    background-color: rgba(167, 10, 240, 0.336);
     overflow: hidden;
     margin: 10px 15px 0 11px;
     padding: 50px 23px 43px 20px;
 }
 
 .roles-support{
-    background-color: #5170ca;
+    background-color: rgba(10, 194, 240, 0.336);
     overflow: hidden;
     margin: 10px 15px 0 11px;
     padding: 50px 23px 43px 20px;

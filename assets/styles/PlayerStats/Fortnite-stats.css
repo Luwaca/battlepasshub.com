@@ -1,19 +1,96 @@
-<style>
-.game-stats-container {
-  background-color: rgba(10, 11, 14, 1);
+body {
+  margin: 0;
+  font-family: 'Protest Strike', sans-serif;
+  background-image: url(../../background/fortnite-vidEo-game-4k-82-2560x1440.jpg);
+  background-position-x: 30%;
+  background-size: 150%;
+  
+}
+
+
+
+
+.stats-container {
+  position: absolute;
   display: flex;
-  max-width: 956px;
+  max-width: 1201px;
   flex-direction: column;
   overflow: hidden;
-  align-items: center;
   font-family: Protest Strike, sans-serif;
   color: #fff;
   font-weight: 400;
   text-align: center;
-  padding: 11px 70px 43px;
+  left:400px;
+}
+
+.player-card {
+  background-color:  #080808;
+
+  border-radius: 39px;
+  
+  display: flex;
+  width: 1100px;
+  flex-direction: column;
+  margin-right: 200px;
+  padding: 26px 0;
+}
+
+.player-title {
+  font-size: 36px;
+  align-self: center;
+}
+
+.player-info {
+  align-self: start;
+  z-index: 10;
+  display: flex;
+  gap: 31px;
+  font-size: 36px;
+  white-space: nowrap;
+  margin: 75px 0 0 62px;
+}
+
+.avatar {
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  width: 94px;
+  height: 94px;
+}
+
+.player-name {
+  margin: auto 0;
 }
 
 .stats-wrapper {
+  background-color: #00a2ff;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 48px 0 14px;
+  
+}
+
+.stats-header {
+  background-color: #0a0b0e;
+  min-height: 55px;
+  width: 100%;
+}
+
+.stats-content {
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  margin: 17px 15px 0 11px;
+  padding: 11px 70px 43px;
+}
+
+.stats-category {
+  font-size: 36px;
+}
+
+.stats-grid {
   display: flex;
   width: 329px;
   max-width: 100%;
@@ -21,7 +98,7 @@
   gap: 3px;
 }
 
-.basic-stats {
+.stats-primary {
   align-self: end;
   display: flex;
   margin-top: 60px;
@@ -29,43 +106,15 @@
   font-size: 20px;
 }
 
-.games-played {
-  align-self: end;
-}
-
-.games-won {
-  margin-top: 12px;
-}
-
-.games-lost {
-  margin-top: 23px;
-}
-
-.time-played {
-  font-size: 19px;
-  margin-top: 23px;
-}
-
-.win-rate {
-  margin-top: 24px;
-}
-
-.kda-stat {
-  align-self: center;
-  margin-top: 23px;
-}
-
-.general-stats {
-  align-self: start;
+.stats-secondary {
   display: flex;
   flex-direction: column;
+  position: relative;
+  padding: 29px 0 0 120px;
 }
 
-.role-title {
-  font-size: 36px;
-}
-
-.detailed-stats {
+.stats-details {
+  
   align-self: end;
   display: flex;
   margin-top: 32px;
@@ -73,45 +122,42 @@
   font-size: 20px;
 }
 
-.eliminations {
-  align-self: center;
-}
-
-.assists {
+.stat-item {
   margin-top: 23px;
 }
 
-.deaths {
+.stat-item-center {
   align-self: center;
   margin-top: 23px;
-}
-
-.damage {
-  margin-top: 23px;
-}
-
-.healing {
-  margin-top: 22px;
 }
 
 @media (max-width: 991px) {
-  .game-stats-container {
+  .player-card {
+    max-width: 100%;
+  }
+  
+  .player-info {
+    white-space: initial;
+    margin: 40px 0 0 10px;
+  }
+  
+  .stats-wrapper {
+    max-width: 100%;
+  }
+  
+  .stats-header {
+    max-width: 100%;
+  }
+  
+  .stats-content {
+    max-width: 100%;
+    margin-right: 10px;
     padding: 0 20px;
   }
   
-  .basic-stats {
+  .stats-primary {
     margin-top: 40px;
   }
-  
-  .games-won,
-  .games-lost,
-  .time-played {
-    margin-right: 2px;
-  }
-  
-  .general-stats,
-  .detailed-stats {
-    white-space: initial;
-  }
 }
-</style>
+
+
