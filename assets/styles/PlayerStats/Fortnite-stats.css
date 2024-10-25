@@ -1,38 +1,35 @@
 body {
+  background-image: url(../../background/fortnite.jpg);
   margin: 0;
-  font-family: 'Protest Strike', sans-serif;
-  background-image: url(../../background/fortnite-vidEo-game-4k-82-2560x1440.jpg);
-  background-position-x: 30%;
-  background-size: 150%;
-  
+  background-size: 90%;
+  background-position-x: 200px;
 }
-
 
 
 
 .stats-container {
   position: absolute;
-  display: flex;
   max-width: 1201px;
-  flex-direction: column;
-  overflow: hidden;
   font-family: Protest Strike, sans-serif;
   color: #fff;
   font-weight: 400;
   text-align: center;
-  left:400px;
+  left: 500px;
+  top: 10px;
+  
+  
+ 
 }
 
 .player-card {
-  background-color:  #080808;
-
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 39px;
-  
   display: flex;
   width: 1100px;
   flex-direction: column;
   margin-right: 200px;
   padding: 26px 0;
+ 
 }
 
 .player-title {
@@ -62,11 +59,11 @@ body {
 }
 
 .stats-wrapper {
-  background-color: #00a2ff;
+  background-color: rgba(0, 204, 255, 0.5);
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: 48px 0 14px;
+ 
   
 }
 
@@ -77,7 +74,7 @@ body {
 }
 
 .stats-content {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.603);
   display: flex;
   flex-direction: column;
   overflow: hidden;
