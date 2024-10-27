@@ -1,138 +1,77 @@
-
 .nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 230px;
-    height: 100vh;
-    background-color: #090b0d;
-    z-index: 1000;
-}
-
-
-.nav-bar .bp {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    top: 13px;
-    left: 10px;
-}
-
-.nav-bar .home,
-.nav-bar .ow,
-.nav-bar .fortnite,
-.nav-bar .stats {
-    position: absolute;
-    width: 230px;
-    height: 92px;
-    background-color: #272727;
+    background-color: rgb(255, 255, 255);
+    width: 1000px;
+    margin-top: 10px;
+    margin-left: 430px;
+    border-radius: 50px;
+    padding: 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 32px;
-    text-align: center;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
 }
 
-.nav-bar .home {
-    top: 77px;
-    box-shadow: inset 0px -5px 29px #6802d040;
-}
-
-.nav-bar .ow {
-    top: 169px;
-    box-shadow: inset 0px -5px 29px #d0500240;
-}
-
-.nav-bar .fortnite {
-    top: 260px;
-    box-shadow: inset 0px -5px 29px #00fff240;
-}
-
-.nav-bar .stats {
-    top: 351px;
-    box-shadow: inset 0px -5px 29px #5fff9b8a;
-}
-
-.nav-bar .text-wrapper,
-.nav-bar .text-wrapper-2,
-.nav-bar .text-wrapper-3,
-.nav-bar .div {
-    font-family: 'Protest Strike', Helvetica;
-    font-weight: 400;
-    font-size: 32px;
-    text-align: center;
+.Button-box {
+    display: flex;
+    align-items: center; /* Align icons vertically */
 }
 
 .search-container {
-    position: absolute;
-    top: 10px;
-    right: 1px;
     display: flex;
-    align-items: center;
+    align-items: center; /* Align search bar vertically */
+    background-color: #000000;
+    padding: 5px;
+    border-radius: 50px;
+    width: 400px;
+    margin-right: auto; /* Push search bar to the left */
+    margin-left: auto; /* Ensure it stays centered */
 }
 
-.search-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
+.avatar {
+    display: flex;
+    align-items: center; /* Align avatar vertically */
+    margin-left: auto; /* Push avatar to the far right */
 }
 
-.search-button img {
-    width: 40px;
-    height: 40px;
+.icon-button {
+    display: inline-block;
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    text-decoration: none; /* Remove underline */
+    background-color: transparent; /* Optional: Set background color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-left: 40px;
+}
+
+.icon-button img {
+    width: 100%; /* Make icon fill the button */
+    height: 100%; /* Make icon fill the button */
+    object-fit: contain; /* Ensure the icon is properly scaled */
+}
+
+.icon-button:hover {
+    opacity: 0.8; /* Optional: Add hover effect */
 }
 
 .search-input {
-    width: 0;
-    padding: 10px;
-    margin-left: 1px;
     border: none;
-    border-radius: 5px;
-    background: #2E2E2E;
-    color: #FFF;
-    font-size: 16px;
-    opacity: 0;
-    transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    padding: 10px;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #000000; /* Black background for input */
+    color: #fff; /* White text color */
+    flex-grow: 1; /* Allow input to take up remaining space */
 }
 
-/* Expanded State */
-.search-container.expanded .search-input {
-    width: 150px;
-    opacity: 1;
+.search-button {
+    border: none;
+    background-color: #6802d0; /* Button background color */
+    color: #ffffff;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 0 50px 50px 0;
 }
 
-/* Styles for tablets and small screens */
-@media (max-width: 768px) {
-    .nav-bar {
-        width: 180px; /* Adjust width for smaller screens */
-    }
-
-    .wrapper {
-        margin-left: 180px; /* Match the adjusted width of nav bar */
-        padding: 15px;
-    }
-}
-
-/* Styles for mobile screens */
-@media (max-width: 480px) {
-    .nav-bar {
-        width: 100%;
-        height: auto; /* Make nav bar full width and height auto */
-        position: relative; /* Adjust position */
-    }
-
-    .wrapper {
-        margin-left: 0; /* No margin for mobile screens */
-        padding: 10px;
-    }
-
-    .search-container {
-        flex-direction: column; /* Stack elements vertically */
-    }
-
-    .search-input {
-        width: 100%; /* Full width input */
-    }
+.search-button:hover {
+    background-color: #8745ca;
 }

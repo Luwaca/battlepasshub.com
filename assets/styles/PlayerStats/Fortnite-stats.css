@@ -1,8 +1,8 @@
 body {
   background-image: url(../../background/fortnite.jpg);
   margin: 0;
-  background-size: 90%;
-  background-position-x: 200px;
+  background-size: 100%;
+ 
 }
 
 
@@ -14,8 +14,8 @@ body {
   color: #fff;
   font-weight: 400;
   text-align: center;
-  left: 500px;
-  top: 10px;
+  left: 400px;
+  top: 100px;
   
   
  
@@ -47,12 +47,6 @@ body {
   margin: 75px 0 0 62px;
 }
 
-.avatar {
-  background-color: #d9d9d9;
-  border-radius: 50%;
-  width: 94px;
-  height: 94px;
-}
 
 .player-name {
   margin: auto 0;

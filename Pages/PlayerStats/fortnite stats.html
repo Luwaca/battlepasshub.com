@@ -9,65 +9,64 @@
 </head>
 <body>
     <div class="nav-bar">
-        <img class="bp" src="../../assets/icons/BP.png" alt="BP Logo" />
-        <a href="../../index.html"><div class="home"><div class="text-wrapper-3">HOME</div></div></a>
-        <a href="../overwatch.html"><div class="ow"><div class="overlap"><div class="text-wrapper-2">OVERWATCH</div></div></div></a>
-        <a href="../fortnite.html"><div class="fortnite"><div class="overlap-group"><div class="div">FORTNITE</div></div></div></a>
-        <a href="../game-selection.html"><div class="stats"><div class="text-wrapper">GAME STATS</div></div></a>
+        <div class="Button-box">
+            <a href="../../index.html" class="icon-button"><img src="../../assets/icons/icons8-home-50.png" alt="Button Icon"></a>
+            <a href="../overwatch.html" class="icon-button"><img src="../../assets/icons/ow-icon.png" alt="Button Icon"></a>
+            <a href="../fortnite.html" class="icon-button"><img src="../../assets/icons/Fortnite.png" alt="Button Icon"></a>
+            <a href="../game-selection.html" class="icon-button"><img src="../../assets/icons/icons8-statistics-50.png" alt="Button Icon"></a>
+        </div>
         <div class="search-container">
-            <button id="search-button" class="search-button">
-                <img src="../../assets/icons/SearchBar.png" alt="Search">
-            </button>
             <input type="text" id="search-input" class="search-input" placeholder="Search...">
+            <button id="search-button" class="search-button">Search</button>
+        </div>
+        <div class="avatar">
+            <a href="profile" class="icon-button"><img src="../../assets/icons/avatar.png" alt="Button Icon"></a>
         </div>
     </div>
-    <section class="stats-container">
-        <article class="player-card">
-          <h1 class="player-title">PLAYER STATS</h1>
-          <div class="player-info">
-            <h2 class="player-name">NAME</h2>
-          </div>
-          <div class="stats-wrapper">
-            <header class="stats-header"></header>
-            <div class="stats-content">
-              <h3 class="stats-category">GENERAL</h3>
-              <div class="stats-grid">
-                <div class="stats-primary">
-                    <p id="matches-played" class="stat-item-center">PLAYED:</p>
-                    <p id="wins" class="stat-item">GAMES WON:</p>
-                    <p id="minutes-played" class="stat-item">TIME PLAYED:</p>
-                    <p id="win-rate" class="stat-item">WIN RATE:</p>
-                    <p id="kd" class="stat-item-center">KDA:</p>
-                    <p id="kills" class="stat-item-center">ELIMS:</p>
-                    <p id="deaths" class="stat-item-center">DEATHS:</p>
-                    <p id="score" class="stat-item">SCORE:</p>
-                    <p id="players-out-lived" class="stat-item">OUTLIVED:</p>
-                    <p id="last-modified" class="stat-item">LAST MODIFIED:</p>
-                    <p id="kills-per-match" class="stat-item">KILLS PER MATCH:</p>
-                </div>                
-                <div class="stats-secondary">
-                    <div class="stats-details">
-                        <p id="kills-per-min" class="stat-item">KILLS PER MIN:</p>
-                        <p id="score-per-match" class="stat-item">SCORE PER MATCH:</p>
-                        <p id="score-per-min" class="stat-item">SCORE PER MIN:</p>
-                        <p id="top-3" class="stat-item">TOP 3 FINISHES:</p>
-                        <p id="top-5" class="stat-item">TOP 5 FINISHES:</p>
-                        <p id="top-6" class="stat-item">TOP 6 FINISHES:</p>
-                        <p id="top-10" class="stat-item">TOP 10 FINISHES:</p>
-                        <p id="top-12" class="stat-item">TOP 12 FINISHES:</p>
-                        <p id="top-25" class="stat-item">TOP 25 FINISHES:</p>
-                    </div>
-                </div>   
-                </div>                
+        <section class="stats-container">
+            <article class="player-card">
+                <h1 class="player-title">PLAYER STATS</h1>
+                <div class="player-info">
+                    <h2 class="player-name">NAME</h2>
                 </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-    </div>
-</body>
-</html>
+                <div class="stats-wrapper">
+                    <header class="stats-header"></header>
+                    <div class="stats-content">
+                        <h3 class="stats-category">GENERAL</h3>
+                        <div class="stats-grid">
+                            <div class="stats-primary">
+                                <p id="matches-played" class="stat-item-center">PLAYED:</p>
+                                <p id="wins" class="stat-item">GAMES WON:</p>
+                                <p id="minutes-played" class="stat-item">TIME PLAYED:</p>
+                                <p id="win-rate" class="stat-item">WIN RATE:</p>
+                                <p id="kd" class="stat-item-center">KDA:</p>
+                                <p id="kills" class="stat-item-center">ELIMS:</p>
+                                <p id="deaths" class="stat-item-center">DEATHS:</p>
+                                <p id="score" class="stat-item">SCORE:</p>
+                                <p id="players-out-lived" class="stat-item">OUTLIVED:</p>
+                                <p id="last-modified" class="stat-item">LAST MODIFIED:</p>
+                                <p id="kills-per-match" class="stat-item">KILLS PER MATCH:</p>
+                            </div>
+                            <div class="stats-secondary">
+                                <div class="stats-details">
+                                    <p id="kills-per-min" class="stat-item">KILLS PER MIN:</p>
+                                    <p id="score-per-match" class="stat-item">SCORE PER MATCH:</p>
+                                    <p id="score-per-min" class="stat-item">SCORE PER MIN:</p>
+                                    <p id="top-3" class="stat-item">TOP 3 FINISHES:</p>
+                                    <p id="top-5" class="stat-item">TOP 5 FINISHES:</p>
+                                    <p id="top-6" class="stat-item">TOP 6 FINISHES:</p>
+                                    <p id="top-10" class="stat-item">TOP 10 FINISHES:</p>
+                                    <p id="top-12" class="stat-item">TOP 12 FINISHES:</p>
+                                    <p id="top-25" class="stat-item">TOP 25 FINISHES:</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+
 <script>
 document.getElementById('search-button').addEventListener('click', () => {
     const searchContainer = document.querySelector('.search-container');

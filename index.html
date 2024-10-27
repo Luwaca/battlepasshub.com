@@ -7,69 +7,50 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Protest+Strike:wght@400&display=swap">
     <link rel="stylesheet" href="assets/styles/homestyles.css">
     <link rel="stylesheet" href="assets/styles/navbar.css">
-    <link rel="icon" type="image/x-icon" href="assets/icons/BP.ico">
+    <link rel="icon" type="image/x-icon" href="assets/BP.ico">
 </head>
-<body style="background-image: url('assets/');">
-    <header>
-        <div class="nav-bar">
-            <img class="bp" src="assets/icons/BP.png" alt="BP Logo" />
-            <a href="index.html">
-                <div class="home">
-                    <div class="text-wrapper-3">HOME</div>
-                </div>
+<body>
+    <div class="nav-bar">
+        <div class="Button-box">
+            <a href="../index.html" class="icon-button"><img src="assets/icons/icons8-home-50.png" alt="Button Icon"></a>
+            <a href="Pages/overwatch.html" class="icon-button"><img src="assets/icons/ow-icon.png" alt="Button Icon"></a>
+            <a href="Pages/fortnite.html" class="icon-button"><img src="assets/icons/Fortnite.png" alt="Button Icon"></a>
+            <a href="Pages/game-selection.html" class="icon-button"><img src="assets/icons/icons8-statistics-50.png" alt="Button Icon"></a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search...">
+            <button id="search-button" class="search-button">Search</button>
+        </div>
+        <div class="avatar">
+            <a href="#" class="icon-button" id="profile-link">
+                <img src="assets/icons/avatar.png" alt="Button Icon">
             </a>
-            <a href="Pages/overwatch.html">
-                <div class="ow">
-                    <div class="overlap">
-                        <div class="text-wrapper-2">OVERWATCH</div>
-                    </div>
-                </div>
-            </a>
-            <a href="Pages/fortnite.html">
-                <div class="fortnite">
-                    <div class="overlap-group">
-                        <div class="div">FORTNITE</div>
-                    </div>
-                </div>
-            </a>
-            <a href="Pages/game-selection.html">
-                <div class="stats">
-                    <div class="text-wrapper">GAME STATS</div>
-                </div>
-            </a>
-           
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const body = document.body;
-            const button = document.getElementById("theme-toggle");
-            const icon = document.getElementById("theme-icon");
-        
-            // Load theme from localStorage
-            if (localStorage.getItem('theme') === 'light-mode') {
-                body.classList.add('light-mode');
-                body.style.backgroundImage = "url('/design/background white.png')";
-                button.classList.add("light-mode");
-                icon.src = "design/dark-mode.png";
-            }
-        
-            // Toggle theme on button click
-            button.addEventListener('click', () => {
-                if (body.classList.contains('light-mode')) {
-                    body.style.backgroundImage = "url('/design/background.png')";
-                    body.classList.remove("light-mode");
-                    button.classList.remove("light-mode");
-                    icon.src = "design/light-mode.png";
-                    localStorage.setItem('theme', 'dark-mode');
-                } else {
-                    body.style.backgroundImage = "url('/design/background white.png')";
-                    body.classList.add("light-mode");
-                    button.classList.add("light-mode");
-                    icon.src = "design/dark-mode.png";
-                    localStorage.setItem('theme', 'light-mode');
-                }
-            });
-        });
-        </script>
-    
+        </div>
+    </div>
+<script>
+
+// scripts.js
+document.getElementById('search-button').addEventListener('click', () => {
+    search();
+});
+
+document.getElementById('search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        search();
+    }
+});
+
+function search() {
+    const query = document.getElementById('search-input').value.trim();
+    if (query) {
+        console.log(`Searching for: ${query}`); // Replace this with your search logic
+    } else {
+        console.log('Please enter a search term.');
+    }
+}
+
+</script>
+            
+
 </body>
 </html>
