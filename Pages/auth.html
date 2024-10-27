@@ -24,10 +24,11 @@
             </a>
         </div>
         <div class="avatar">
-            <a href="../profile" class="icon-button">
-                <img src="../../assets/icons/avatar.png" alt="Button Icon">
+            <a href="#" class="icon-button" id="profile-link">
+                <img src="../assets/icons/avatar.png" alt="Button Icon">
             </a>
         </div>
+        
         <div class="search-container">
             <input type="text" id="search-input" class="search-input" placeholder="Search...">
             <button id="search-button" class="search-button">Search</button>
@@ -54,8 +55,7 @@
             </div>
         </section>
     </div>
-    <script>
-// scripts/auth.js
+    <script>// scripts/auth.js
 
 document.addEventListener('DOMContentLoaded', function() {
     const signInForm = document.getElementById('sign-in-form');
@@ -68,9 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
     profileLink.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent the default action
         if (userSignedIn) {
-            window.location.href = '../profile.html'; // Redirect to profile if signed in
+            window.location.href = 'profile.html'; // Redirect to profile if signed in
         } else {
-            window.location.href = '../auth.html'; // Redirect to auth page if not signed in
+            window.location.href = 'auth.html'; // Redirect to auth page if not signed in
         }
     });
 
@@ -120,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
         //   .catch(error => console.error('Error:', error));
     });
 });
-
 
 </script>
 </body>
