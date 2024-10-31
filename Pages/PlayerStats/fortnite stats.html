@@ -1,138 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fortnite Player Stats</title>
     <link rel="stylesheet" href="../../assets/styles/navbar.css">
     <link rel="stylesheet" href="../../assets/styles/PlayerStats/Fortnite-stats.css">
-</head>
-<body>
+  </head>
+  <body>
     <div class="nav-bar">
-        <div class="Button-box">
-            <a href="../../index.html" class="icon-button"><img src="../../assets/icons/icons8-home-50.png" alt="Button Icon"></a>
-            <a href="../overwatch.html" class="icon-button"><img src="../../assets/icons/ow-icon.png" alt="Button Icon"></a>
-            <a href="../fortnite.html" class="icon-button"><img src="../../assets/icons/Fortnite.png" alt="Button Icon"></a>
-            <a href="../game-selection.html" class="icon-button"><img src="../../assets/icons/icons8-statistics-50.png" alt="Button Icon"></a>
-        </div>
-        <div class="search-container">
-            <input type="text" id="search-input" class="search-input" placeholder="Search...">
-            <button id="search-button" class="search-button">Search</button>
-        </div>
-        <div class="avatar">
-            <a href="#" class="icon-button" id="profile-link">
-                <img src="../assets/icons/avatar.png" alt="Button Icon">
-            </a>
-        </div>
+      <div class="Button-box">
+        <a href="../../index.html" class="icon-button">
+          <img src="../../assets/icons/icons8-home-50.png" alt="Button Icon">
+        </a>
+        <a href="../overwatch.html" class="icon-button">
+          <img src="../../assets/icons/ow-icon.png" alt="Button Icon">
+        </a>
+        <a href="../fortnite.html" class="icon-button">
+          <img src="../../assets/icons/Fortnite.png" alt="Button Icon">
+        </a>
+        <a href="../game-selection.html" class="icon-button">
+          <img src="../../assets/icons/icons8-statistics-50.png" alt="Button Icon">
+        </a>
+      </div>
+      <div class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Search...">
+        <button id="search-button" class="search-button">Search</button>
+      </div>
+      <div class="avatar">
+        <a href="#" class="icon-button" id="profile-link">
+          <img src="../assets/icons/avatar.png" alt="Button Icon">
+        </a>
+      </div>
     </div>
-        <section class="stats-container">
-            <article class="player-card">
-                <h1 class="player-title">PLAYER STATS</h1>
-                <div class="player-info">
-                    <h2 class="player-name">NAME</h2>
+    <section class="stats-container">
+      <article class="player-card">
+        <h1 class="player-title">PLAYER STATS</h1>
+        <div class="player-info">
+          <h2 class="player-name">NAME</h2>
+        </div>
+        <div class="stats-wrapper">
+          <header class="stats-header"></header>
+          <div class="stats-content">
+            <h3 class="stats-category">GENERAL</h3>
+            <div class="stats-grid">
+              <div class="stats-primary">
+                <p id="matches-played" class="stat-item-center">PLAYED:</p>
+                <p id="wins" class="stat-item">GAMES WON:</p>
+                <p id="minutes-played" class="stat-item">TIME PLAYED:</p>
+                <p id="win-rate" class="stat-item">WIN RATE:</p>
+                <p id="kd" class="stat-item-center">KDA:</p>
+                <p id="kills" class="stat-item-center">ELIMS:</p>
+                <p id="deaths" class="stat-item-center">DEATHS:</p>
+                <p id="score" class="stat-item">SCORE:</p>
+                <p id="players-out-lived" class="stat-item">OUTLIVED:</p>
+                <p id="last-modified" class="stat-item">LAST MODIFIED:</p>
+                <p id="kills-per-match" class="stat-item">KILLS PER MATCH:</p>
+              </div>
+              <div class="stats-secondary">
+                <div class="stats-details">
+                  <p id="kills-per-min" class="stat-item">KILLS PER MIN:</p>
+                  <p id="score-per-match" class="stat-item">SCORE PER MATCH:</p>
+                  <p id="score-per-min" class="stat-item">SCORE PER MIN:</p>
+                  <p id="top-3" class="stat-item">TOP 3 FINISHES:</p>
+                  <p id="top-5" class="stat-item">TOP 5 FINISHES:</p>
+                  <p id="top-6" class="stat-item">TOP 6 FINISHES:</p>
+                  <p id="top-10" class="stat-item">TOP 10 FINISHES:</p>
+                  <p id="top-12" class="stat-item">TOP 12 FINISHES:</p>
+                  <p id="top-25" class="stat-item">TOP 25 FINISHES:</p>
                 </div>
-                <div class="stats-wrapper">
-                    <header class="stats-header"></header>
-                    <div class="stats-content">
-                        <h3 class="stats-category">GENERAL</h3>
-                        <div class="stats-grid">
-                            <div class="stats-primary">
-                                <p id="matches-played" class="stat-item-center">PLAYED:</p>
-                                <p id="wins" class="stat-item">GAMES WON:</p>
-                                <p id="minutes-played" class="stat-item">TIME PLAYED:</p>
-                                <p id="win-rate" class="stat-item">WIN RATE:</p>
-                                <p id="kd" class="stat-item-center">KDA:</p>
-                                <p id="kills" class="stat-item-center">ELIMS:</p>
-                                <p id="deaths" class="stat-item-center">DEATHS:</p>
-                                <p id="score" class="stat-item">SCORE:</p>
-                                <p id="players-out-lived" class="stat-item">OUTLIVED:</p>
-                                <p id="last-modified" class="stat-item">LAST MODIFIED:</p>
-                                <p id="kills-per-match" class="stat-item">KILLS PER MATCH:</p>
-                            </div>
-                            <div class="stats-secondary">
-                                <div class="stats-details">
-                                    <p id="kills-per-min" class="stat-item">KILLS PER MIN:</p>
-                                    <p id="score-per-match" class="stat-item">SCORE PER MATCH:</p>
-                                    <p id="score-per-min" class="stat-item">SCORE PER MIN:</p>
-                                    <p id="top-3" class="stat-item">TOP 3 FINISHES:</p>
-                                    <p id="top-5" class="stat-item">TOP 5 FINISHES:</p>
-                                    <p id="top-6" class="stat-item">TOP 6 FINISHES:</p>
-                                    <p id="top-10" class="stat-item">TOP 10 FINISHES:</p>
-                                    <p id="top-12" class="stat-item">TOP 12 FINISHES:</p>
-                                    <p id="top-25" class="stat-item">TOP 25 FINISHES:</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-
-<script>
-document.getElementById('search-button').addEventListener('click', () => {
-    const searchContainer = document.querySelector('.search-container');
-    searchContainer.classList.toggle('expanded');
-    searchStats(); // Call the searchStats function
-});
-
-document.getElementById('search-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        searchStats();
-    }
-});
-
-// Fetch and display player stats
-async function searchStats() {
-    const searchInput = document.getElementById('search-input').value.trim();
-    if (searchInput === '') {
-        console.log('No username provided');
-        return; // Exit the function if the input is empty
-    }
-
-    try {
-        const response = await fetch(`https://fortnite-api.com/v2/stats/br/v2?name=${searchInput}`, {
-            headers: {
-                'Authorization': '7814f7a0-c232-4acc-b50a-95806bfa212d' // Ensure this is your correct API key
-            }
-        });
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <script>
+      document.getElementById('search-button').addEventListener('click', () => {
+        const searchContainer = document.querySelector('.search-container');
+        searchContainer.classList.toggle('expanded');
+        searchStats(); // Call the searchStats function
+      });
+      document.getElementById('search-input').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+          searchStats();
         }
-        const data = await response.json();
-
-        // Log the full JSON response
-        console.log('API Response:', data);
-
-       // Update the UI with fetched data
-document.querySelector('.player-name').innerText = data.data.account.name || 'N/A';
-document.getElementById('matches-played').innerText = `PLAYED: ${data.data.stats.all.overall.matches}`;
-document.getElementById('wins').innerText = `GAMES WON: ${data.data.stats.all.overall.wins}`;
-document.getElementById('minutes-played').innerText = `TIME PLAYED: ${data.data.stats.all.overall.minutesPlayed} Mins`;
-document.getElementById('win-rate').innerText = `WIN RATE: ${data.data.stats.all.overall.winRate}%`;
-document.getElementById('kd').innerText = `KDA: ${data.data.stats.all.overall.kd}`;
-document.getElementById('kills').innerText = `ELIMS: ${data.data.stats.all.overall.kills}`;
-document.getElementById('deaths').innerText = `DEATHS: ${data.data.stats.all.overall.deaths}`;
-document.getElementById('players-out-lived').innerText = `OUTLIVED: ${data.data.stats.all.overall.playersOutlived}`;
-document.getElementById('kills-per-match').innerText = `KILLS PER MATCH: ${data.data.stats.all.overall.killsPerMatch}`;
-document.getElementById('kills-per-min').innerText = `KILLS PER MIN: ${data.data.stats.all.overall.killsPerMin}`;
-document.getElementById('score').innerText = `SCORE: ${data.data.stats.all.overall.score}`;
-document.getElementById('score-per-match').innerText = `SCORE PER MATCH: ${data.data.stats.all.overall.scorePerMatch}`;
-document.getElementById('score-per-min').innerText = `SCORE PER MIN: ${data.data.stats.all.overall.scorePerMin}`;
-document.getElementById('top-3').innerText = `TOP 3 FINISHES: ${data.data.stats.all.overall.top3}`;
-document.getElementById('top-5').innerText = `TOP 5 FINISHES: ${data.data.stats.all.overall.top5}`;
-document.getElementById('top-6').innerText = `TOP 6 FINISHES: ${data.data.stats.all.overall.top6}`;
-document.getElementById('top-10').innerText = `TOP 10 FINISHES: ${data.data.stats.all.overall.top10}`;
-document.getElementById('top-12').innerText = `TOP 12 FINISHES: ${data.data.stats.all.overall.top12}`;
-document.getElementById('top-25').innerText = `TOP 25 FINISHES: ${data.data.stats.all.overall.top25}`;
-document.getElementById('last-modified').innerText = `LAST MODIFIED: ${new Date(data.data.stats.all.overall.lastModified).toLocaleString()}`;
-
-    } catch (error) {
-        console.error('Error fetching player stats:', error);
-    }
-}
-
-
+      });
+      // Fetch and display player stats
+      async function searchStats() {
+        const searchInput = document.getElementById('search-input').value.trim();
+        if (searchInput === '') {
+          console.log('No username provided');
+          return; // Exit the function if the input is empty
+        }
+        try {
+          const response = await fetch(`https://fortnite-api.com/v2/stats/br/v2?name=${searchInput}`, {
+            headers: {
+              'Authorization': '7814f7a0-c232-4acc-b50a-95806bfa212d' // Ensure this is your correct API key
+            }
+          });
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          // Log the full JSON response
+          console.log('API Response:', data);
+          // Update the UI with fetched data
+          document.querySelector('.player-name').innerText = data.data.account.name || 'N/A';
+          document.getElementById('matches-played').innerText = `PLAYED: ${data.data.stats.all.overall.matches}`;
+          document.getElementById('wins').innerText = `GAMES WON: ${data.data.stats.all.overall.wins}`;
+          document.getElementById('minutes-played').innerText = `TIME PLAYED: ${data.data.stats.all.overall.minutesPlayed} Mins`;
+          document.getElementById('win-rate').innerText = `WIN RATE: ${data.data.stats.all.overall.winRate}%`;
+          document.getElementById('kd').innerText = `KDA: ${data.data.stats.all.overall.kd}`;
+          document.getElementById('kills').innerText = `ELIMS: ${data.data.stats.all.overall.kills}`;
+          document.getElementById('deaths').innerText = `DEATHS: ${data.data.stats.all.overall.deaths}`;
+          document.getElementById('players-out-lived').innerText = `OUTLIVED: ${data.data.stats.all.overall.playersOutlived}`;
+          document.getElementById('kills-per-match').innerText = `KILLS PER MATCH: ${data.data.stats.all.overall.killsPerMatch}`;
+          document.getElementById('kills-per-min').innerText = `KILLS PER MIN: ${data.data.stats.all.overall.killsPerMin}`;
+          document.getElementById('score').innerText = `SCORE: ${data.data.stats.all.overall.score}`;
+          document.getElementById('score-per-match').innerText = `SCORE PER MATCH: ${data.data.stats.all.overall.scorePerMatch}`;
+          document.getElementById('score-per-min').innerText = `SCORE PER MIN: ${data.data.stats.all.overall.scorePerMin}`;
+          document.getElementById('top-3').innerText = `TOP 3 FINISHES: ${data.data.stats.all.overall.top3}`;
+          document.getElementById('top-5').innerText = `TOP 5 FINISHES: ${data.data.stats.all.overall.top5}`;
+          document.getElementById('top-6').innerText = `TOP 6 FINISHES: ${data.data.stats.all.overall.top6}`;
+          document.getElementById('top-10').innerText = `TOP 10 FINISHES: ${data.data.stats.all.overall.top10}`;
+          document.getElementById('top-12').innerText = `TOP 12 FINISHES: ${data.data.stats.all.overall.top12}`;
+          document.getElementById('top-25').innerText = `TOP 25 FINISHES: ${data.data.stats.all.overall.top25}`;
+          document.getElementById('last-modified').innerText = `LAST MODIFIED: ${new Date(data.data.stats.all.overall.lastModified).toLocaleString()}`;
+        } catch (error) {
+          console.error('Error fetching player stats:', error);
+        }
+      }
     </script>
-</body>
+  </body>
 </html>

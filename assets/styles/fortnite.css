@@ -5,36 +5,41 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #006eff;
+  }
   
-}
-
-body, h1, h2, h3, h4, h5, h6 {
-    font-family: 'BigNoodleTitling', sans-serif;
-}
-
-
-/* Adjust font sizes */
-h1 {
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "BigNoodleTitling", sans-serif;
+  }
+  
+  /* Adjust font sizes */
+  h1 {
     font-size: 3em; /* Bigger headers */
-}
-
-h2 {
+  }
+  
+  h2 {
     font-size: 2.5em;
-}
-
-h3 {
+  }
+  
+  h3 {
     font-size: 2em;
-}
-
-body {
+  }
+  
+  body {
     font-size: 2em; /* Bigger body text */
-}
-.wrapper {
-    max-width: calc(100% - 400px); /* Ensure wrapper doesn't exceed the screen width */
- 
-}
-
-.banner {
+  }
+  .wrapper {
+    max-width: calc(
+      100% - 400px
+    ); /* Ensure wrapper doesn't exceed the screen width */
+  }
+  
+  .banner {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,33 +50,31 @@ body {
     top: 0;
     z-index: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.banner a {
+  }
+  
+  .banner a {
     color: #e0e0e0;
     text-decoration: none;
     padding: 8px 10px;
     margin: 0 3px;
     transition: background-color 0.3s;
     font-weight: bold;
-}
-
-.banner a:hover {
+  }
+  
+  .banner a:hover {
     background-color: #575757;
-}
-
-
-
-.hero-banner.fortnite h1 {
+  }
+  
+  .hero-banner.fortnite h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-}
-
-.hero-banner.fortnite p {
+  }
+  
+  .hero-banner.fortnite p {
     font-size: 1.2em;
-}
-
-.content {
+  }
+  
+  .content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -80,11 +83,10 @@ body {
     gap: 20px;
     margin: 20px auto;
     max-width: 1200px;
-
-}
-
-.countdown-box.fortnite,
-.patch-notes-box.fortnite {
+  }
+  
+  .countdown-box.fortnite,
+  .patch-notes-box.fortnite {
     background-color: rgba(0, 0, 0, 0.7);
     color: #005c99;
     text-align: center;
@@ -93,76 +95,76 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     width: 45%;
     min-width: 300px;
-
-}
-
-.countdown-box.fortnite h1,
-.patch-notes-box.fortnite h1 {
-    color: #FFFFFF;
+  }
+  
+  .countdown-box.fortnite h1,
+  .patch-notes-box.fortnite h1 {
+    color: #ffffff;
     margin-bottom: 20px;
-}
-
-.countdown.fortnite {
+  }
+  
+  .countdown.fortnite {
     font-size: 2em;
     color: #ffffff;
     background-color: #005c99;
     padding: 10px 2px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    
-}
-
-.patch-notes-link {
-    color: #5FCEEA;
+  }
+  
+  .patch-notes-link {
+    color: #5fceea;
     text-decoration: none;
     font-weight: bold;
-}
-
-.patch-notes-link:hover {
+  }
+  
+  .patch-notes-link:hover {
     text-decoration: underline;
-}
-
-.item-shop {
+  }
+  
+  .item-shop {
     position: absolute;
     text-align: center;
     padding: 20px;
     background-color: #1a1818;
-    color: #FFF;
+    color: #fff;
     left: 0px;
-}
-
-#shop-container {
+  }
+  
+  #shop-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-}
-
-.item {
+  }
+  
+  .item {
     background-color: #1774a0;
     border-radius: 10px;
     padding: 20px;
     width: 200px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.item img {
+  }
+  
+  .item img {
     max-width: 100%;
     border-radius: 10px;
-}
-
-.item h2 {
+  }
+  
+  .item h2 {
     font-size: 1.5em;
     margin: 10px 0;
-}
-
-.item p {
+  }
+  
+  .item p {
     font-size: 1em;
     margin: 5px 0;
-}
-
-.item p:nth-child(4) { /* Price */
+  }
+  
+  .item p:nth-child(4) {
+    /* Price */
     font-weight: bold;
     color: #00ff0d; /* Golden color for price */
-}
+  }
+  
