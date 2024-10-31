@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <s name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overwatch</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Protest+Strike:wght@400&display=swap">
     <link rel="stylesheet" href="../assets/styles/navbar.css">
     <link rel="stylesheet" href="../assets/styles/overwatch.css">
     <link rel="icon" type="image/x-icon" href="../assets/icons/BP.ico">
@@ -19,7 +18,8 @@
         </div>
         <div class="search-container">
             <input type="text" id="search-input" class="search-input" placeholder="Search...">
-            <button id="search-button" class="search-button">Search</button>
+            <button id="search-button" class="search-button" type="button">Search</button>
+
         </div>
         <div class="avatar">
             <a href="#" class="icon-button" id="profile-link">
@@ -117,106 +117,20 @@
 
     <script>
  
-document.addEventListener('DOMContentLoaded', function () {
-    // Function to open modal
-    function openModal() {
-        const modal = document.getElementById('hero-modal');
-        modal.style.display = 'block';
-    }
-
-    // Function to close modal
-    function closeModal() {
-        const modal = document.getElementById('hero-modal');
-        modal.style.display = 'none';
-    }
-
-    // Fetch and display hero info
-    async function fetchHeroInfo(hero) {
-        try {
-            const response = await fetch(`https://little-congruous-gatsby.glitch.me/api/overwatch/hero/${hero}`);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            document.getElementById('hero-name').textContent = data.name || 'Hero Name Unavailable';
-            document.getElementById('hero-portrait').src = data.portrait || 'default-image.png';
-            document.getElementById('hero-description').textContent = data.description || 'Description not available';
-            document.getElementById('hero-role').textContent = `Role: ${data.role || 'N/A'}`;
-            document.getElementById('hero-location').textContent = `Location: ${data.location || 'N/A'}`;
-            document.getElementById('hero-birthday').textContent = `Birthday: ${data.birthday || 'N/A'}`;
-            document.getElementById('hero-age').textContent = `Age: ${data.age || 'N/A'}`;
-            
-            const hitpoints = data.hitpoints || {};
-            document.getElementById('hero-hitpoints').innerHTML = `
+ document.addEventListener("DOMContentLoaded",function(){function e(){let e=document.getElementById("hero-modal");e.style.display="block"}function t(){let e=document.getElementById("hero-modal");e.style.display="none"}async function n(t){try{let n=await fetch(`https://little-congruous-gatsby.glitch.me/api/overwatch/hero/${t}`);if(!n.ok)throw Error("Network response was not ok");let o=await n.json();document.getElementById("hero-name").textContent=o.name||"Hero Name Unavailable",document.getElementById("hero-portrait").src=o.portrait||"default-image.png",document.getElementById("hero-description").textContent=o.description||"Description not available",document.getElementById("hero-role").textContent=`Role: ${o.role||"N/A"}`,document.getElementById("hero-location").textContent=`Location: ${o.location||"N/A"}`,document.getElementById("hero-birthday").textContent=`Birthday: ${o.birthday||"N/A"}`,document.getElementById("hero-age").textContent=`Age: ${o.age||"N/A"}`;let i=o.hitpoints||{};document.getElementById("hero-hitpoints").innerHTML=`
                 <p>Hitpoints:</p>
                 <ul>
-                    <li>Shields: ${hitpoints.shields || 'N/A'}</li>
-                    <li>Armor: ${hitpoints.armor || 'N/A'}</li>
-                    <li>Health: ${hitpoints.health || 'N/A'}</li>
-                    <li>Total: ${hitpoints.total || 'N/A'}</li>
+                    <li>Shields: ${i.shields||"N/A"}</li>
+                    <li>Armor: ${i.armor||"N/A"}</li>
+                    <li>Health: ${i.health||"N/A"}</li>
+                    <li>Total: ${i.total||"N/A"}</li>
                 </ul>
-            `;
-
-            const abilities = data.abilities || [];
-            const abilitiesHTML = abilities.map(ability => `
+            `;let l=o.abilities||[],r=l.map(e=>`
                 <div class="ability">
-                    <img src="${ability.icon}" alt="${ability.name} icon" />
-                    <p>${ability.name}: ${ability.description}</p>
+                    <img src="${e.icon}" alt="${e.name} icon" />
+                    <p>${e.name}: ${e.description}</p>
                 </div>
-            `).join('');
-            document.getElementById('hero-abilities').innerHTML = abilitiesHTML;
-
-            openModal();
-        } catch (error) {
-            console.error('Error fetching hero info:', error);
-            document.getElementById('hero-name').textContent = 'Error';
-            document.getElementById('hero-portrait').src = 'error-image.png';
-            document.getElementById('hero-description').textContent = 'Unable to fetch hero info';
-            openModal();
-        }
-    }
-
-    // Event listeners for hero boxes
-    document.querySelectorAll('.hero-box').forEach(box => {
-        box.addEventListener('click', function () {
-            const hero = this.getAttribute('data-hero');
-            fetchHeroInfo(hero);
-        });
-    });
-
-    // Event listener for close button
-    document.querySelector('.close').addEventListener('click', closeModal);
-
-    // Close modal on outside click
-    window.addEventListener('click', function (event) {
-        const modal = document.getElementById('hero-modal');
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-      
-    function countdown(endDate, elementId) {
-            const end = new Date(endDate).getTime();
-            const x = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = end - now;
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                document.getElementById(elementId).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById(elementId).innerHTML = "EXPIRED";
-                }
-            }, 1000);
-        }
-        window.onload = function() {
-            countdown("Dec 10, 2024 00:00:00", "overwatch-countdown");
-        };
-});
-
-
+            `).join("");document.getElementById("hero-abilities").innerHTML=r,e()}catch(a){console.error("Error fetching hero info:",a),document.getElementById("hero-name").textContent="Error",document.getElementById("hero-portrait").src="error-image.png",document.getElementById("hero-description").textContent="Unable to fetch hero info",e()}}document.querySelectorAll(".hero-box").forEach(e=>{e.addEventListener("click",function(){let e=this.getAttribute("data-hero");n(e)})}),document.querySelector(".close").addEventListener("click",t),window.addEventListener("click",function(e){let n=document.getElementById("hero-modal");e.target===n&&t()}),window.onload=function(){!function e(t,n){let o=new Date(t).getTime(),i=setInterval(function(){let e=new Date().getTime(),t=o-e;document.getElementById(n).innerHTML=`${Math.floor(t/864e5)}d ${Math.floor(t%864e5/36e5)}h ${Math.floor(t%36e5/6e4)}m ${Math.floor(t%6e4/1e3)}s`,t<0&&(clearInterval(i),document.getElementById(n).innerHTML="EXPIRED")},1e3)}("Dec 10, 2024 00:00:00","overwatch-countdown")}});
     </script>
   </body>
 </html>

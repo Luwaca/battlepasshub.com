@@ -378,5 +378,12 @@ height: 94px;
     margin: 23px 200px 0 200px;
 }
 
+@font-face {
+    font-family: 'Protest Strike';
+    src: url('../../fonts/ProtestStrike-Regular.ttf') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 
 

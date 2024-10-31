@@ -16,9 +16,6 @@ body {
   text-align: center;
   left: 400px;
   top: 100px;
-  
-  
- 
 }
 
 .player-card {
@@ -150,5 +147,13 @@ body {
     margin-top: 40px;
   }
 }
+
+@font-face {
+  font-family: 'Protest Strike';
+  src: url('../../fonts/ProtestStrike-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 
