@@ -1,0 +1,134 @@
+body {
+    background-image: url(../../../backgrounds/Background.png);
+  
+    font-family: "Fugaz One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+  }
+  
+  .abilty {
+    display: grid;
+    float: left;
+    grid-template-columns: repeat(2, 0fr);
+    margin-left: 250px;
+    margin-top: 100px;
+    gap: 30px 30px;
+    margin-bottom: 100px;
+  }
+  
+  .abilty img {
+    float: left;
+    width: 80px;
+  }
+  .abilty p {
+    width: 1500px;
+    font-size: 20px;
+  }
+  
+  .story {
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    top: 850px;
+    left: 450px;
+    width: 1000px;
+    user-select: none;
+  }
+  
+  .story h1 {
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0px;
+  }
+  
+  .story p {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+  }
+  
+  iframe {
+    margin-bottom: 100px;
+    border: none;
+  }
+  
+  .grid-heroes {
+    position: absolute;
+    display: grid;
+    margin-left: 10px;
+    margin-top: 200px;
+    padding-top: 0px;
+    grid-template-columns: repeat(1, 0fr);
+    gap: 15px 15px;
+  }
+  .hero-grid {
+    background-color: rgb(12, 12, 12);
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 0px 6px rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 150px;
+    height: 210px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 5px;
+    user-select: none;
+  }
+  
+  img {
+    width: 150px;
+  }
+  
+  .button4:hover {
+    background-color: #e4bc0d;
+    color: rgb(255, 255, 255);
+  }
+  .button4:active {
+    background-color: #ad6a11;
+    transform: translateY(4px);
+  }
+  
+  .change-hero {
+    background-color: rgb(255, 145, 0);
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 0px 6px rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 140px;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+    user-select: none;
+    padding: 5px;
+  }
+  
+
+.button {
+    background-color: rgba(0, 0, 0, 0.644);
+   
+    width: 400px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 50px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 300px;
+    margin-bottom: 100px;
+    color: rgb(0, 238, 255);
+    }
+    #blue{ 
+        box-shadow: 0px 10px rgb(0, 238, 255);
+        }
+        .button10:hover {
+            background-color: rgb(67, 174, 182);
+            color: rgb(255, 255, 255);
+          }
+          .button10:active {
+            background-color: rgb(44, 117, 122);
+            transform: translateY(4px);
+          }
+

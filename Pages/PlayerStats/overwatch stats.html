@@ -196,31 +196,57 @@
         return data;
       }
       async function searchStats() {
-        let username = document.getElementById('search-input').value;
-        const playerId = username.replace('#', '-'); // Replace # with -
-        try {
-          const summaryData = await fetchSummary(playerId);
-          const statsData = await fetchStatsSummary(playerId); // Fetch stats summary data
-          console.log('Fetched summary data:', summaryData);
-          console.log('Fetched stats data:', statsData); // Log stats data
-          if (summaryData && statsData) {
-            // Update Player Info
-            document.getElementById('username').textContent = summaryData.summary.username;
-            document.getElementById('player-icon').src = summaryData.summary.avatar || 'default-icon-url';
-            document.getElementById('namecard').src = summaryData.summary.namecard || 'default-namecard-url';
-            document.getElementById('title').textContent = 'Title: ' + (summaryData.summary.title || 'N/A');
-            document.getElementById('endorsement-icon').src = summaryData.summary.endorsement.frame || 'default-endorsement-icon-url';
-            // Log before updating stats
-            console.log('Updating stats with data:', statsData);
-            // Update stats with the fetched data
-            updateStats(statsData);
-          } else {
-            console.log('Private Account or No Data Found');
-          }
-        } catch (error) {
-          console.error('Error fetching summary or stats:', error);
-        }
-      }
+  let username = document.getElementById('search-input').value;
+  const playerId = username.replace('#', '-'); // Replace # with -
+  try {
+    const summaryData = await fetchSummary(playerId);
+    const statsData = await fetchStatsSummary(playerId); // Fetch stats summary data
+    console.log('Fetched summary data:', summaryData);
+    console.log('Fetched stats data:', statsData); // Log stats data
+
+    if (summaryData && statsData) {
+      // Update Player Info
+      document.getElementById('username').textContent = summaryData.summary.username;
+      document.getElementById('player-icon').src = summaryData.summary.avatar || 'default-icon-url';
+      document.getElementById('namecard').src = summaryData.summary.namecard || 'default-namecard-url';
+      document.getElementById('title').textContent = 'Title: ' + (summaryData.summary.title || 'N/A');
+      document.getElementById('endorsement-icon').src = summaryData.summary.endorsement.frame || 'default-endorsement-icon-url';
+
+      // Update stats with the fetched data
+      updateStats(statsData);
+
+      // Save data to your database
+      await saveStatsToDatabase(summaryData, statsData);
+    } else {
+      console.log('Private Account or No Data Found');
+    }
+  } catch (error) {
+    console.error('Error fetching summary or stats:', error);
+  }
+}
+
+async function saveStatsToDatabase(summaryData, statsData) {
+  try {
+    const response = await fetch('/save-stats', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        summary: summaryData,
+        stats: statsData
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    console.log('Stats saved to database successfully');
+  } catch (error) {
+    console.error('Error saving stats to database:', error);
+  }
+}
+
 
       function updateStats(statsData) {
         // Log the stats data
