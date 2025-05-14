@@ -1,0 +1,29 @@
+body{
+    background-image: url(../backgrounds/Background.png);
+      background-repeat: repeat-y;
+      font-family: "Fugaz One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+  }
+  .button {
+    margin: 300px 0px 00px 300px;
+    background-color: #252525;
+    width: 400px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 50px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    user-select: none;
+    color: rgb(255, 255, 255);
+    }
+    
+.button3:hover {
+    background-color: #dd1010;
+    color: white;
+  }
+  .button3:active {
+    background-color: #770c0c;
+    transform: translateY(4px);
+  }
