@@ -21,7 +21,7 @@
   bottom: -15px; /* Shadow positioned below the box */
   height: 60px; /* Thickness of the shadow */
   background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Multiple colors for a smoother gradient */
-  z-index: -1;
+  z-index: -1; /* Place the shadow behind the navdiv */
   filter: blur(3px); /* Smooth shadow effect */
   border-radius: 5px 5px 10px 10px; /* Optional for rounded corners */
   animation: smoothRainbow 3s infinite linear; /* Fast and smooth animation */

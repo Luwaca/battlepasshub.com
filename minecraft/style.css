@@ -145,6 +145,7 @@ body h2 {
 }
 
 .inner {
+  z-index: -2;
   margin-left: 300px;
   margin-right: 300px;
   width: 1200px;
