@@ -1,0 +1,77 @@
+.nav-bar {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 1000px;
+    margin-left: 450px;
+    border-radius: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+}
+
+.Button-box {
+    display: flex;
+    align-items: center; /* Align icons vertically */
+}
+
+.search-container {
+    display: flex;
+    align-items: center; /* Align search bar vertically */
+    background-color: #000000;
+    padding: 5px;
+    border-radius: 50px;
+    width: 400px;
+    margin-right: auto; /* Push search bar to the left */
+    margin-left: auto; /* Ensure it stays centered */
+}
+
+.avatar {
+    display: flex;
+    align-items: center; /* Align avatar vertically */
+    margin-left: auto; /* Push avatar to the far right */
+}
+
+.icon-button {
+    display: inline-block;
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    text-decoration: none; /* Remove underline */
+    background-color: transparent; /* Optional: Set background color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-left: 40px;
+}
+
+.icon-button img {
+    width: 100%; /* Make icon fill the button */
+    height: 100%; /* Make icon fill the button */
+    object-fit: contain; /* Ensure the icon is properly scaled */
+}
+
+.icon-button:hover {
+    opacity: 0.8; /* Optional: Add hover effect */
+}
+
+.search-input {
+    border: none;
+    padding: 10px;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #000000; /* Black background for input */
+    color: #fff; /* White text color */
+    flex-grow: 1; /* Allow input to take up remaining space */
+}
+
+.search-button {
+    border: none;
+    background-color: #6802d0; /* Button background color */
+    color: #ffffff;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 0 50px 50px 0;
+}
+
+.search-button:hover {
+    background-color: #8745ca;
+}

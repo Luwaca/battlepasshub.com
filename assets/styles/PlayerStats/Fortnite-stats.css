@@ -1,0 +1,159 @@
+body {
+  background-image: url(../../background/fortnite.jpg);
+  margin: 0;
+  background-size: 100%;
+ 
+}
+
+
+
+.stats-container {
+  position: absolute;
+  max-width: 1201px;
+  font-family: Protest Strike, sans-serif;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  left: 400px;
+  top: 100px;
+}
+
+.player-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 39px;
+  display: flex;
+  width: 1100px;
+  flex-direction: column;
+  margin-right: 200px;
+  padding: 26px 0;
+ 
+}
+
+.player-title {
+  font-size: 36px;
+  align-self: center;
+}
+
+.player-info {
+  align-self: start;
+  z-index: 10;
+  display: flex;
+  gap: 31px;
+  font-size: 36px;
+  white-space: nowrap;
+  margin: 75px 0 0 62px;
+}
+
+
+.player-name {
+  margin: auto 0;
+}
+
+.stats-wrapper {
+  background-color: rgba(0, 204, 255, 0.5);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+ 
+  
+}
+
+.stats-header {
+  background-color: #0a0b0e;
+  min-height: 55px;
+  width: 100%;
+}
+
+.stats-content {
+  background-color: rgba(0, 0, 0, 0.603);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  margin: 17px 15px 0 11px;
+  padding: 11px 70px 43px;
+}
+
+.stats-category {
+  font-size: 36px;
+}
+
+.stats-grid {
+  display: flex;
+  width: 329px;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.stats-primary {
+  align-self: end;
+  display: flex;
+  margin-top: 60px;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.stats-secondary {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 29px 0 0 120px;
+}
+
+.stats-details {
+  
+  align-self: end;
+  display: flex;
+  margin-top: 32px;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.stat-item {
+  margin-top: 23px;
+}
+
+.stat-item-center {
+  align-self: center;
+  margin-top: 23px;
+}
+
+@media (max-width: 991px) {
+  .player-card {
+    max-width: 100%;
+  }
+  
+  .player-info {
+    white-space: initial;
+    margin: 40px 0 0 10px;
+  }
+  
+  .stats-wrapper {
+    max-width: 100%;
+  }
+  
+  .stats-header {
+    max-width: 100%;
+  }
+  
+  .stats-content {
+    max-width: 100%;
+    margin-right: 10px;
+    padding: 0 20px;
+  }
+  
+  .stats-primary {
+    margin-top: 40px;
+  }
+}
+
+@font-face {
+  font-family: 'Protest Strike';
+  src: url('../../fonts/ProtestStrike-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
